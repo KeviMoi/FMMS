@@ -8,6 +8,9 @@ ini_set('display_errors', 1);
 // Include the database connection file
 include 'db_config/db_conn.php';
 
+// Include the logger function
+include 'logger.php';
+
 // Initialize an error message variable
 $error_message = '';
 $success_message = '';
@@ -52,20 +55,29 @@ try {
                     $_SESSION['role'] = $role;
                     $_SESSION['status'] = $status;
 
+                    // Log the successful login attempt
+                    logActivity("User logged in successfully.", 'SUCCESS', $username);
+
                     // Redirect to a script that will handle the post-login logic
                     header("Location: post_login.php");
                     exit;
                 } else {
                     // User is not active
-                    $error_message = "Your account is not active. Please contact the administrator.";
+                    $error_message = "Your account is not active. Please contact the admin.";
+                    // Log the unsuccessful login attempt due to inactive account
+                    logActivity("Attempted login with inactive account.", 'FAILURE', $username);
                 }
             } else {
                 // Password is incorrect
                 $error_message = "Incorrect username or password.";
+                // Log the unsuccessful login attempt due to incorrect password
+                logActivity("Incorrect password entered.", 'FAILURE', $username);
             }
         } else {
             // User with the given username does not exist
             $error_message = "Incorrect username or password.";
+            // Log the unsuccessful login attempt due to non-existent username
+            logActivity("Non-existent username entered.", 'FAILURE', $username);
         }
 
         // Free the result set
@@ -75,12 +87,13 @@ try {
 } catch (Exception $e) {
     // Catch any exceptions and set the error message
     $error_message = 'An error occurred: ' . $e->getMessage();
+    // Log the exception
+    logActivity($error_message, 'FAILURE');
 } finally {
     // Close the database connection
     $conn->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

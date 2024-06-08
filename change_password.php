@@ -1,8 +1,13 @@
 <!-- php Code -->
 <?php
 require 'db_config/db_conn.php';
+include 'logger.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  session_start();
+  $userId = $_SESSION['user_id'];
+  $username = $_SESSION['username'];
+
   try {
     // Retrieve form data
     $oldPassword = $_POST["old_password"];
@@ -13,10 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($newPassword !== $confirmPassword) {
       throw new Exception("New password and confirm password do not match.");
     }
-
-    // Get the current user's ID from the session 
-    session_start();
-    $userId = $_SESSION['user_id'];
 
     // Fetch the user's current password from the database
     $stmt = $conn->prepare("SELECT password FROM users WHERE user_id = ?");
@@ -53,9 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Success message
+    logActivity("Password successfully changed.", 'SUCCESS', $username);
     echo "<div class='message-box success'>Password successfully changed.</div>";
   } catch (Exception $e) {
     // Error message
+    logActivity("Failed to change password: " . $e->getMessage(), 'ERROR', $username);
     echo "<div class='message-box error'>Error: " . $e->getMessage() . "</div>";
   } finally {
     // Close the statement and connection
@@ -69,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   exit();
 }
 ?>
-
 <!-- HTML Code -->
 <head>
   <link rel="stylesheet" href="assets/css/message_box.css" />

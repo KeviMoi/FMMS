@@ -1,0 +1,34 @@
+[2024-06-08 10:41:28] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 10:42:16] [FAILURE] [::1] [User: kevimoi] Attempted login with inactive account.
+[2024-06-08 10:42:55] [FAILURE] [::1] [User: dfsf] Non-existent username entered.
+[2024-06-08 10:57:31] [FAILURE] [::1] [User: kevimoi] Incorrect password entered.
+[2024-06-08 10:58:38] [FAILURE] [::1] [User: kevimoi] Incorrect password entered.
+[2024-06-08 10:59:14] [FAILURE] [::1] [User: kevimoi] Incorrect password entered.
+[2024-06-08 11:02:10] [FAILURE] [::1] [User: kevimoi] Attempted login with inactive account.
+[2024-06-08 11:02:52] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 11:02:55] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 11:09:15] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 11:09:43] [SUCCESS] [::1] [User: kevimoi] Password successfully changed.
+[2024-06-08 11:09:46] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 11:11:12] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 11:13:56] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 11:14:03] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 11:14:44] [ERROR] [::1] [User: kevimoi] Failed to change password: New password and confirm password do not match.
+[2024-06-08 11:15:17] [ERROR] [::1] [User: kevimoi] Failed to change password: New password and confirm password do not match.
+[2024-06-08 11:15:22] [ERROR] [::1] [User: kevimoi] Failed to change password: New password and confirm password do not match.
+[2024-06-08 11:15:23] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 11:15:28] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 11:52:26] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 11:52:32] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 13:41:33] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-08 13:45:54] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 13:47:57] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 13:49:05] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-08 13:49:51] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-08 15:03:25] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-08 15:28:40] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-08 15:29:06] [SUCCESS] [::1] [User: kevimoi] User with ID: 57 deleted successfully
+[2024-06-08 15:36:53] [SUCCESS] [::1] [User: kevimoi] User with ID: 54 updated successfully
+[2024-06-08 15:37:23] [SUCCESS] [::1] [User: kevimoi] User with ID: 54 updated successfully
+[2024-06-08 15:39:24] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 54 updated successfully
+[2024-06-08 15:41:19] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 54 updated successfully.

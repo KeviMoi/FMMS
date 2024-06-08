@@ -10,10 +10,6 @@ include_once 'db_config/db_conn.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>View Users</title>
-  <style>
-    /* Include your existing CSS here */
-    /* ... */
-  </style>
 </head>
 
 <body>
@@ -146,170 +142,170 @@ include_once 'db_config/db_conn.php';
     }
 
     function checkUniqueness(field, value, userId, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "check_uniqueness.php", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const response = JSON.parse(xhr.responseText);
-      callback(response.unique);
-    }
-  };
-  xhr.send(`field=${field}&value=${value}&user_id=${userId}`);
-}
-
-function saveUser(button, userId) {
-  const row = button.parentElement.parentElement;
-  const usernameCell = row.cells[1];
-  const fullNameCell = row.cells[2];
-  const emailCell = row.cells[3];
-  const phoneNumberCell = row.cells[4];
-  const dobCell = row.cells[5];
-  const roleCell = row.cells[6].querySelector('select');
-  const statusCell = row.cells[7].querySelector('select');
-
-  const username = usernameCell.textContent.trim();
-  const fullName = fullNameCell.textContent.trim();
-  const email = emailCell.textContent.trim();
-  const phoneNumber = phoneNumberCell.textContent.trim();
-  const dob = dobCell.textContent.trim();
-  const role = roleCell.value;
-  const status = statusCell.value;
-
-  // Input validation
-  if (!validateUsername(username)) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Invalid Username',
-      text: 'Username should be 2-20 characters alphanumeric with no spaces, and can include underscores and hyphens.',
-    });
-    return;
-  }
-  if (!validateName(fullName)) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Invalid Name',
-      text: 'Name should be 2-100 alphabetical characters and can include hyphens, apostrophes, and spaces between names.',
-    });
-    return;
-  }
-  if (!validateEmail(email)) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Invalid Email',
-      text: 'Please enter a valid email address.',
-    });
-    return;
-  }
-  if (!validatePhoneNumber(phoneNumber)) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Invalid Phone Number',
-      text: 'Please enter a valid phone number.',
-    });
-    return;
-  }
-  if (!validateDOB(dob)) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Invalid Date of Birth',
-      text: 'Date of Birth should be more than 18 years ago and less than 100 years ago.',
-    });
-    return;
-  }
-
-  const checkAndSave = () => {
-    const changedFields = {};
-    if (username !== usernameCell.getAttribute('data-original')) {
-      changedFields.username = username;
-    }
-    if (fullName !== fullNameCell.getAttribute('data-original')) {
-      changedFields.full_name = fullName;
-    }
-    if (email !== emailCell.getAttribute('data-original')) {
-      changedFields.email = email;
-    }
-    if (phoneNumber !== phoneNumberCell.getAttribute('data-original')) {
-      changedFields.phone_number = phoneNumber;
-    }
-    if (dob !== dobCell.getAttribute('data-original')) {
-      changedFields.dob = dob;
-    }
-    if (role !== roleCell.parentElement.getAttribute('data-original')) {
-      changedFields.role = role;
-    }
-    if (status !== statusCell.parentElement.getAttribute('data-original')) {
-      changedFields.status = status;
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "check_uniqueness.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          callback(response.unique);
+        }
+      };
+      xhr.send(`field=${field}&value=${value}&user_id=${userId}`);
     }
 
-    if (Object.keys(changedFields).length === 0) {
-      Swal.fire({
-        icon: 'info',
-        title: 'No Changes',
-        text: 'No changes detected to save.',
-      });
-      return;
-    }
+    function saveUser(button, userId) {
+      const row = button.parentElement.parentElement;
+      const usernameCell = row.cells[1];
+      const fullNameCell = row.cells[2];
+      const emailCell = row.cells[3];
+      const phoneNumberCell = row.cells[4];
+      const dobCell = row.cells[5];
+      const roleCell = row.cells[6].querySelector('select');
+      const statusCell = row.cells[7].querySelector('select');
 
-    // Send the data using AJAX
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "update_user.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        Swal.fire({
-          icon: 'success',
-          title: 'User Updated',
-          text: 'User details have been successfully updated.',
-          timer: 2000,
-          timerProgressBar: true,
-          showConfirmButton: false
-        }).then(() => {
-          // Update the original data attributes with new values
-          usernameCell.setAttribute('data-original', username);
-          fullNameCell.setAttribute('data-original', fullName);
-          emailCell.setAttribute('data-original', email);
-          phoneNumberCell.setAttribute('data-original', phoneNumber);
-          dobCell.setAttribute('data-original', dob);
-          roleCell.parentElement.setAttribute('data-original', role);
-          statusCell.parentElement.setAttribute('data-original', status);
+      const username = usernameCell.textContent.trim();
+      const fullName = fullNameCell.textContent.trim();
+      const email = emailCell.textContent.trim();
+      const phoneNumber = phoneNumberCell.textContent.trim();
+      const dob = dobCell.textContent.trim();
+      const role = roleCell.value;
+      const status = statusCell.value;
 
-          // Disable the save button
-          button.disabled = true;
-        });
-      }
-    };
-
-    const data = `user_id=${userId}&changes=${encodeURIComponent(JSON.stringify(changedFields))}`;
-    xhr.send(data);
-  };
-
-  // Check uniqueness of username and email
-  checkUniqueness('username', username, userId, (isUsernameUnique) => {
-    if (!isUsernameUnique) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Username Taken',
-        text: 'The username is already taken. Please choose another one.',
-      });
-      return;
-    }
-
-    checkUniqueness('email', email, userId, (isEmailUnique) => {
-      if (!isEmailUnique) {
+      // Input validation
+      if (!validateUsername(username)) {
         Swal.fire({
           icon: 'error',
-          title: 'Email Taken',
-          text: 'The email is already taken. Please choose another one.',
+          title: 'Invalid Username',
+          text: 'Username should be 2-20 characters alphanumeric with no spaces, and can include underscores and hyphens.',
+        });
+        return;
+      }
+      if (!validateName(fullName)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid Name',
+          text: 'Name should be 2-100 alphabetical characters and can include hyphens, apostrophes, and spaces between names.',
+        });
+        return;
+      }
+      if (!validateEmail(email)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid Email',
+          text: 'Please enter a valid email address.',
+        });
+        return;
+      }
+      if (!validatePhoneNumber(phoneNumber)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid Phone Number',
+          text: 'Please enter a valid phone number.',
+        });
+        return;
+      }
+      if (!validateDOB(dob)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid Date of Birth',
+          text: 'Date of Birth should be more than 18 years ago and less than 100 years ago.',
         });
         return;
       }
 
-      // Proceed with saving the user details if both are unique
-      checkAndSave();
-    });
-  });
-}
+      const checkAndSave = () => {
+        const changedFields = {};
+        if (username !== usernameCell.getAttribute('data-original')) {
+          changedFields.username = username;
+        }
+        if (fullName !== fullNameCell.getAttribute('data-original')) {
+          changedFields.full_name = fullName;
+        }
+        if (email !== emailCell.getAttribute('data-original')) {
+          changedFields.email = email;
+        }
+        if (phoneNumber !== phoneNumberCell.getAttribute('data-original')) {
+          changedFields.phone_number = phoneNumber;
+        }
+        if (dob !== dobCell.getAttribute('data-original')) {
+          changedFields.dob = dob;
+        }
+        if (role !== roleCell.parentElement.getAttribute('data-original')) {
+          changedFields.role = role;
+        }
+        if (status !== statusCell.parentElement.getAttribute('data-original')) {
+          changedFields.status = status;
+        }
+
+        if (Object.keys(changedFields).length === 0) {
+          Swal.fire({
+            icon: 'info',
+            title: 'No Changes',
+            text: 'No changes detected to save.',
+          });
+          return;
+        }
+
+        // Send the data using AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "update_user.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            Swal.fire({
+              icon: 'success',
+              title: 'User Updated',
+              text: 'User details have been successfully updated.',
+              timer: 2000,
+              timerProgressBar: true,
+              showConfirmButton: false
+            }).then(() => {
+              // Update the original data attributes with new values
+              usernameCell.setAttribute('data-original', username);
+              fullNameCell.setAttribute('data-original', fullName);
+              emailCell.setAttribute('data-original', email);
+              phoneNumberCell.setAttribute('data-original', phoneNumber);
+              dobCell.setAttribute('data-original', dob);
+              roleCell.parentElement.setAttribute('data-original', role);
+              statusCell.parentElement.setAttribute('data-original', status);
+
+              // Disable the save button
+              button.disabled = true;
+            });
+          }
+        };
+
+        const data = `user_id=${userId}&changes=${encodeURIComponent(JSON.stringify(changedFields))}`;
+        xhr.send(data);
+      };
+
+      // Check uniqueness of username and email
+      checkUniqueness('username', username, userId, (isUsernameUnique) => {
+        if (!isUsernameUnique) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Username Taken',
+            text: 'The username is already taken. Please choose another one.',
+          });
+          return;
+        }
+
+        checkUniqueness('email', email, userId, (isEmailUnique) => {
+          if (!isEmailUnique) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Email Taken',
+              text: 'The email is already taken. Please choose another one.',
+            });
+            return;
+          }
+
+          // Proceed with saving the user details if both are unique
+          checkAndSave();
+        });
+      });
+    }
 
 
     function deleteUser(userId) {
@@ -326,13 +322,16 @@ function saveUser(button, userId) {
           const xhr = new XMLHttpRequest();
           xhr.open("POST", "delete_user.php", true);
           xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function () {
+          xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
-              Swal.fire(
-                'Deleted!',
-                'User has been deleted.',
-                'success'
-              ).then(() => {
+              Swal.fire({
+                icon: 'success',
+                title: 'User Updated',
+                text: 'User details have been successfully updated.',
+                timer: 2000,
+                timerProgressBar: true,
+                showConfirmButton: false
+              }).then(() => {
                 location.reload();
               });
             }

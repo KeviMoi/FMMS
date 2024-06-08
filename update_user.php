@@ -1,6 +1,9 @@
 <?php
+session_start();
+
 // Include the database connection file
 include_once 'db_config/db_conn.php';
+include_once 'logger.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = intval($_POST['user_id']);
@@ -28,15 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (mysqli_stmt_execute($stmt)) {
             echo "User updated successfully";
+            logActivity("User's details with ID: $user_id updated successfully.", "SUCCESS", $_SESSION['username']);
         } else {
             echo "Error updating user";
+            logActivity("Failed to update user's details with ID: $user_id.", "ERROR", $_SESSION['username']);
         }
 
         mysqli_stmt_close($stmt);
     } else {
         echo "No changes detected or invalid user ID.";
+        logActivity("No changes detected or invalid user ID for user with ID: $user_id.", "ERROR", $_SESSION['username']);
     }
 }
 
 mysqli_close($conn);
-?>

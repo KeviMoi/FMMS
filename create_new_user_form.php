@@ -3,6 +3,10 @@
 <?php include 'db_config/db_conn.php'; ?>
 
 <?php
+session_start();
+
+include 'logger.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
@@ -123,9 +127,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Success message
+            $message = "User successfully added: Username - $username, Email - $email";
+            logActivity($message, "SUCCESS", $_SESSION['username']);
             echo "<div class='message-box success'>User Successfully Added</div>";
         } catch (Exception $e) {
             // Error message
+            $message = "Error adding user: " . $e->getMessage();
+            logActivity($message, "ERROR", $_SESSION['username']);
             echo "<div class='message-box error'>Error: " . $e->getMessage() . "</div>";
         } finally {
             // Close the statement and connection
@@ -139,6 +147,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($errors as $error) {
             echo "<div class='message-box error'>$error</div>";
         }
+        $message = "User addition failed due to validation errors";
+        logActivity($message, "ERROR", $_SESSION['username']);
     }
 
     // Redirect to dashboard (optional)
