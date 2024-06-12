@@ -33,3 +33,119 @@
 [2024-06-08 15:39:24] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 54 updated successfully
 [2024-06-08 15:41:19] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 54 updated successfully.
 [2024-06-08 15:43:55] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-10 11:01:12] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-10 11:02:45] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - Mark, Email - markmulli001@gmail.com
+[2024-06-10 11:02:57] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:04:14] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - Mark, Email - markmulli001@gmail.com
+[2024-06-10 11:04:14] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:04:14] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:04:14] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:04:22] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:04:22] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:05:05] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:05:06] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:05:45] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:06:58] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:07] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - Mark, Email - markmulli001@gmail.com
+[2024-06-10 11:07:07] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:07] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:07] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:07] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:07] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:33] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-10 11:07:53] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-10 11:13:38] [SUCCESS] [::1] [User: Mark] User logged in successfully.
+[2024-06-10 11:15:16] [SUCCESS] [::1] [User: Mark] Password successfully changed.
+[2024-06-10 11:15:23] [SUCCESS] [::1] [User: Mark] User logged out successfully.
+[2024-06-10 11:15:46] [SUCCESS] [::1] [User: Mark] User logged in successfully.
+[2024-06-10 11:17:12] [SUCCESS] [::1] [User: Mark] User's details with ID: 60 updated successfully.
+[2024-06-11 16:24:09] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-11 16:24:55] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - jd, Email - kemoi.kev@gmail.com
+[2024-06-11 16:25:49] [SUCCESS] [::1] [User: kevimoi] User with ID: 61 deleted successfully
+[2024-06-11 16:26:31] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - jd, Email - kemoi.kev@gmail.com
+[2024-06-11 16:28:58] [SUCCESS] [::1] [User: kevimoi] User with ID: 62 deleted successfully
+[2024-06-11 16:37:36] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:37:48] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:39:06] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:39:07] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:39:09] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:39:09] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:39:09] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:41:52] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-11 16:42:38] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:42:48] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:43:03] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:43:19] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 16:43:51] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:43:54] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:44:37] [SUCCESS] [::1] [User: kevimoi] User with ID: 63 deleted successfully
+[2024-06-11 16:45:17] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 16:45:50] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-11 16:45:56] [SUCCESS] [::1] [User: kevimoi] User with ID: 64 deleted successfully
+[2024-06-11 16:47:15] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 16:54:59] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 16:57:35] [SUCCESS] [::1] [User: kevimoi] User with ID: 65 deleted successfully
+[2024-06-11 16:58:10] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:02:29] [SUCCESS] [::1] [User: kevimoi] User with ID: 66 deleted successfully
+[2024-06-11 17:06:48] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:08:46] [SUCCESS] [::1] [User: kevimoi] User with ID: 67 deleted successfully
+[2024-06-11 17:12:59] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:14:20] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:16:06] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:20:18] [SUCCESS] [::1] [User: kevimoi] User with ID: 68 deleted successfully
+[2024-06-11 17:20:38] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:21:25] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:26:14] [SUCCESS] [::1] [User: kevimoi] User with ID: 69 deleted successfully
+[2024-06-11 17:26:47] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - johndoe, Email - kemoi.kev@gmail.com
+[2024-06-11 17:27:39] [SUCCESS] [::1] [User: kevimoi] User with ID: 70 deleted successfully
+[2024-06-11 17:33:15] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:35:50] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:36:42] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:38:23] [SUCCESS] [::1] [User: kevimoi] User with ID: 71 deleted successfully
+[2024-06-11 17:39:03] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:39:33] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:42:57] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:43:56] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:22] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:25] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:26] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:27] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:28] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:31] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:32] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:44:48] [SUCCESS] [::1] [User: kevimoi] User with ID: 72 deleted successfully
+[2024-06-11 17:46:23] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:46:34] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:46:46] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:46:52] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:46:57] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:47:13] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:47:23] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-11 17:47:37] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-11 17:50:22] [SUCCESS] [::1] [User: kevimoi] User with ID: 73 deleted successfully
+[2024-06-11 17:51:01] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-12 08:03:28] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:05:51] [SUCCESS] [::1] [User: kevimoi] Password successfully changed.
+[2024-06-12 08:05:56] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-12 08:06:00] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:12:59] [SUCCESS] [::1] [User: kevimoi] Password successfully changed.
+[2024-06-12 08:13:08] [ERROR] [::1] [User: kevimoi] Failed to change password: Old password is incorrect.
+[2024-06-12 08:13:32] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-12 08:13:41] [FAILURE] [::1] [User: kevimoi] Incorrect password entered.
+[2024-06-12 08:13:59] [FAILURE] [::1] [User: kevimoi] Incorrect password entered.
+[2024-06-12 08:14:26] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:15:18] [SUCCESS] [::1] [User: kevimoi] Password successfully changed.
+[2024-06-12 08:15:26] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-12 08:16:23] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:17:33] [ERROR] [::1] [User: kevimoi] Failed to change password: New password cannot be the same as the old password.
+[2024-06-12 08:20:23] [ERROR] [::1] [User: kevimoi] Failed to change password: New password and confirm password do not match.
+[2024-06-12 08:20:32] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-12 08:20:35] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:21:44] [ERROR] [::1] [User: kevimoi] Failed to change password: New password cannot be the same as the old password.
+[2024-06-12 08:22:32] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-12 08:22:36] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:22:55] [ERROR] [::1] [User: kevimoi] Failed to change password: New password cannot be the same as the old password.
+[2024-06-12 08:23:03] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-12 08:26:29] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-12 08:26:54] [ERROR] [::1] [User: kevimoi] Failed to change password: New password cannot be the same as the old password.
+[2024-06-12 08:27:29] [SUCCESS] [::1] [User: kevimoi] Password successfully changed.

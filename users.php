@@ -316,7 +316,7 @@ include_once 'db_config/db_conn.php';
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, delete!'
       }).then((result) => {
         if (result.isConfirmed) {
           const xhr = new XMLHttpRequest();
@@ -326,8 +326,8 @@ include_once 'db_config/db_conn.php';
             if (xhr.readyState === 4 && xhr.status === 200) {
               Swal.fire({
                 icon: 'success',
-                title: 'User Updated',
-                text: 'User details have been successfully updated.',
+                title: 'Deleted',
+                text: 'User  has been successfully deleted.',
                 timer: 2000,
                 timerProgressBar: true,
                 showConfirmButton: false

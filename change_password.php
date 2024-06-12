@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_result($hashedPasswordFromDb);
     if ($stmt->num_rows == 0) {
       throw new Exception("User not found.");
-    }
+    }  
     $stmt->fetch();
 
     // Verify the old password
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <!-- JavaScript Code -->
-<!-- JavaScript Code -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <script>
   document.getElementById('changePasswordForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -127,21 +127,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Display error message if password does not meet requirements
       document.getElementById('message-container').innerHTML = '<div class="message-box error">Password must have at least 8 characters, contain at least one lowercase letter, one uppercase letter, one digit, and one special character.</div>';
     } else {
+      // Display the loading alert
+      Swal.fire({
+        title: 'Creating User...',
+        text: 'Please wait while we process your request.',
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
       fetch('change_password.php', {
           method: 'POST',
           body: formData
         })
         .then(response => response.text())
         .then(data => {
+          Swal.close(); // Close the loading alert
           document.getElementById('message-container').innerHTML = data;
         })
         .catch(error => {
+          Swal.close(); // Close the loading alert
           console.error('Error:', error);
           document.getElementById('message-container').innerHTML = '<div class="message-box error">An error occurred. Please try again later.</div>';
         });
     }
   });
 </script>
+
 
 <!-- HTML Code -->
 

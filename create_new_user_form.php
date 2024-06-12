@@ -240,9 +240,20 @@ function generateStrongPassword($length = 12)
 <!--  HTML Code  -->
 
 <!--  js  -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
     document.getElementById('createUserForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        // Display the loading alert
+        Swal.fire({
+            title: 'Creating User...',
+            text: 'Please wait while we process your request.',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
 
         const formData = new FormData(this);
 
@@ -253,13 +264,18 @@ function generateStrongPassword($length = 12)
             .then(response => response.text())
             .then(data => {
                 document.getElementById('message-container').innerHTML = data;
+                // Close the loading alert after request is completed
+                Swal.close();
             })
             .catch(error => {
                 console.error('Error:', error);
                 document.getElementById('message-container').innerHTML = '<div class="message-box error">An error occurred. Please try again later.</div>';
+                // Close the loading alert in case of error
+                Swal.close();
             });
     });
 </script>
+
 <!--  js  -->
 
 <!--  Css  -->
