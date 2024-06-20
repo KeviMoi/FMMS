@@ -143,7 +143,7 @@ include_once 'db_config/db_conn.php';
 
     function checkUniqueness(field, value, userId, callback) {
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", "check_uniqueness.php", true);
+      xhr.open("POST", "check_user_uniqueness.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {

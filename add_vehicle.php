@@ -1,4 +1,5 @@
 <!--  PHP Code  -->
+<!--  PHP Code  -->
 <?php require("mail_script.php"); ?>
 <?php include 'db_config/db_conn.php'; ?>
 
@@ -11,128 +12,95 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // Retrieve form data
-    $name = trim($_POST["name"]);
-    $username = trim($_POST["username"]);
-    $email = trim($_POST["email"]);
-    $role = trim($_POST["role"]);
-    $phone_number = trim($_POST["phone_number"]);
-    $dob = trim($_POST["dob"]);
+    $license_plate = trim($_POST["license_plate"]);
+    $make = trim($_POST["make"]);
+    $model = trim($_POST["model"]);
+    $year = trim($_POST["year"]);
+    $vin = trim($_POST["vin"]);
+    $mileage = trim($_POST["mileage"]);
+    $fuel_type = trim($_POST["fuel_type"]);
+    $assigned_driver_id = trim($_POST["assigned_driver_id"]);
 
     // Validation functions
-    function validateName($name)
-    {
-        return preg_match("/^[a-zA-Z' -]{2,100}$/", $name);
+    function validateLicensePlate($license_plate)
+    {        
+        return preg_match("/^K[A-Z]{2}\s*\d{3}[A-Z]$/", $license_plate);
     }
 
-    function validateUsername($username)
+
+    function validateMake($make)
     {
-        return preg_match("/^[a-zA-Z0-9_-]{2,20}$/", $username);
+        return preg_match("/^[a-zA-Z0-9 ]{2,50}$/", $make);
     }
 
-    function validateEmail($email)
+    function validateModel($model)
     {
-        return filter_var($email, FILTER_VALIDATE_EMAIL);
+        return preg_match("/^[a-zA-Z0-9 ]{2,50}$/", $model);
     }
 
-    function validatePhoneNumber($phone_number)
+    function validateYear($year)
     {
-        return preg_match("/^\+?[0-9]{10,15}$/", $phone_number);
+        return preg_match("/^\d{4}$/", $year) && $year <= date("Y");
     }
 
-    function validateDOB($dob)
+    function validateVIN($vin)
     {
-        $dobTimestamp = strtotime($dob);
-        $age = (time() - $dobTimestamp) / (365 * 24 * 60 * 60);
-        return $age >= 18 && $age <= 100;
+        return preg_match("/^[A-HJ-NPR-Z0-9]{17}$/", $vin);
+    }
+
+    function validateMileage($mileage)
+    {
+        return preg_match("/^\d+$/", $mileage);
     }
 
     // Validate form data
-    if (!validateName($name)) {
-        $errors[] = "Please enter a valid full name.";
+    if (!validateLicensePlate($license_plate)) {
+        $errors[] = "Please enter a valid license plate.";
     }
 
-    if (!validateUsername($username)) {
-        $errors[] = "Username should a maximum of 20 characters and contain may alphanumeric characters, underscores, and hyphens.";
+    if (!validateMake($make)) {
+        $errors[] = "Please enter a valid vehicle make.";
     }
 
-    if (!validateEmail($email)) {
-        $errors[] = "Please enter a valid email address.";
+    if (!validateModel($model)) {
+        $errors[] = "Please enter a valid vehicle model.";
     }
 
-    if (!validatePhoneNumber($phone_number)) {
-        $errors[] = "Please enter a valid phone number.";
+    if (!validateYear($year)) {
+        $errors[] = "Please enter a valid vehicle year.";
     }
 
-    if (!validateDOB($dob)) {
-        $errors[] = "Please enter a valid date of birth. User must be at least 18 years old";
+    if (!validateVIN($vin)) {
+        $errors[] = "Please enter a valid vehicle VIN.";
     }
 
-    if (!in_array($role, ['driver', 'mechanic', 'manager'])) {
-        $errors[] = "Please select a valid role: Manager, Driver, or Mechanic.";
+    if (!validateMileage($mileage)) {
+        $errors[] = "Please enter a valid vehicle mileage.";
     }
 
-    // Check for uniqueness of username
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $stmt->bind_result($username_count);
-    $stmt->fetch();
-    if ($username_count > 0) {
-        $errors[] = "Sorry, the username you entered is already taken. Please choose a different one.";
+    if (!in_array($fuel_type, ['Petrol', 'Diesel', 'Electric', 'Hybrid'])) {
+        $errors[] = "Please select a valid fuel type.";
     }
-    $stmt->close();
 
-    // Check for uniqueness of email
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->bind_result($email_count);
-    $stmt->fetch();
-    if ($email_count > 0) {
-        $errors[] = "Sorry, the email address you entered is already registered. Please use a different email address.";
-    }
-    $stmt->close();
-
-    // If there are no errors, proceed with inserting the user
+    // If there are no errors, proceed with inserting the vehicle
     if (empty($errors)) {
         try {
-            // Generate a strong password
-            $generatedPassword = generateStrongPassword();
-
-            // Hash the password
-            $hashedPassword = password_hash($generatedPassword, PASSWORD_DEFAULT);
-
             // SQL statement
-            $stmt = $conn->prepare("INSERT INTO users (username, full_name, email, role, phone_number, dob, password, password_change) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $password_change = false;
-            $stmt->bind_param("sssssssi", $username, $name, $email, $role, $phone_number, $dob, $hashedPassword, $password_change);
+            $stmt = $conn->prepare("INSERT INTO vehicles (license_plate, make, model, year, vin, mileage, fuel_type, assigned_driver_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssisssi", $license_plate, $make, $model, $year, $vin, $mileage, $fuel_type, $assigned_driver_id);
 
             // Execute the SQL statement
             if (!$stmt->execute()) {
                 throw new Exception("Database error: " . $stmt->error);
             }
 
-            // Send email after successful database insertion
-            $message = "Dear $name,<br>";
-            $message .= "Thank you for registering with us!<br>";
-            $message .= "Your account credentials are as follows:<br>";
-            $message .= "Username: $username<br>";
-            $message .= "Password: $generatedPassword<br>";
-            $message .= "Please keep this information secure and do not share it with anyone.<br>";
-            $message .= "Best regards,<br>";
-            $message .= "Makvo Limited Team";
-
-            if (!sendMail($email, "Account Details", $message)) {
-                throw new Exception("Failed to send email.");
-            }
-
             // Success message
-            $message = "User successfully added: Username - $username, Email - $email";
+            $message = "Vehicle successfully added: License Plate - $license_plate, VIN - $vin";
             logActivity($message, "SUCCESS", $_SESSION['username']);
-            echo "<div class='message-box success'>User Successfully Added</div>";
+            echo "<div class='message-box success'>Vehicle Successfully Added</div>";
         } catch (Exception $e) {
             // Error message
-            $message = "Error adding user: " . $e->getMessage();
+            $message = "Error adding vehicle: " . $e->getMessage();
             logActivity($message, "ERROR", $_SESSION['username']);
             echo "<div class='message-box error'>Error: " . $e->getMessage() . "</div>";
         } finally {
@@ -147,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($errors as $error) {
             echo "<div class='message-box error'>$error</div>";
         }
-        $message = "User addition failed due to validation errors";
+        $message = "Vehicle addition failed due to validation errors";
         logActivity($message, "ERROR", $_SESSION['username']);
     }
 
@@ -155,28 +123,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //header('Location: fleet_manager_dashboard.php');
     exit();
 }
-
-// Function to generate a Strong Password
-function generateStrongPassword($length = 8)
-{
-    $lowercase = 'abcdefghijklmnopqrstuvwxyz';
-    $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $numbers = '0123456789';
-    $specialChars = '!@#$%^&*()-_+=';
-    $password = '';
-    $password .= $lowercase[rand(0, strlen($lowercase) - 1)];
-    $password .= $uppercase[rand(0, strlen($uppercase) - 1)];
-    $password .= $numbers[rand(0, strlen($numbers) - 1)];
-    $password .= $specialChars[rand(0, strlen($specialChars) - 1)];
-    for ($i = strlen($password); $i < $length; $i++) {
-        $password .= $lowercase[rand(0, strlen($lowercase) - 1)];
-        $password .= $uppercase[rand(0, strlen($uppercase) - 1)];
-        $password .= $numbers[rand(0, strlen($numbers) - 1)];
-        $password .= $specialChars[rand(0, strlen($specialChars) - 1)];
-    }
-    return substr(str_shuffle($password), 0, $length);
-}
 ?>
+<!--  PHP Code  -->
+
 <!--  PHP Code  -->
 
 <!--  HTML Code  -->
@@ -188,7 +137,7 @@ function generateStrongPassword($length = 8)
 <div id="modalDialog" class="modal" style="display: none">
     <div class="modal-content animate-top">
         <div class="modal-header">
-            <h5 class="modal-title">Create New User</h5>
+            <h5 class="modal-title">Add New Vehicle</h5>
             <button type="button" class="close close-icon">
                 <span class="material-icons-sharp">close</span>
             </button>
@@ -196,40 +145,49 @@ function generateStrongPassword($length = 8)
         <!--  Modal Body  -->
         <div class="modal_container">
             <div id="message-container"></div>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="createUserForm">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="createVehicleForm">
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details">Full Name</span>
-                        <input type="text" name="name" id="name" placeholder="Enter your name" required />
+                        <span class="details">License Plate</span>
+                        <input type="text" name="license_plate" id="license_plate" placeholder="Enter license plate" required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Username</span>
-                        <input type="text" name="username" id="username" placeholder="Enter your username" required />
+                        <span class="details">Make</span>
+                        <input type="text" name="make" id="make" placeholder="Enter vehicle make" required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Email</span>
-                        <input type="text" name="email" id="email" placeholder="Enter your email" required />
+                        <span class="details">Model</span>
+                        <input type="text" name="model" id="model" placeholder="Enter vehicle model" required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Phone Number</span>
-                        <input type="text" name="phone_number" id="phone_number" placeholder="Enter your phone number" required />
+                        <span class="details">Year</span>
+                        <input type="number" name="year" id="year" placeholder="Enter vehicle year" required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Date of Birth</span>
-                        <input type="date" name="dob" id="dob" required />
+                        <span class="details">VIN</span>
+                        <input type="text" name="vin" id="vin" placeholder="Enter vehicle VIN" required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Role</span>
-                        <select id="role" name="role" required>
-                            <option value="" disabled selected>Select Role</option>
-                            <option value="driver">Driver</option>
-                            <option value="mechanic">Mechanic</option>
-                            <option value="manager">Fleet Manager</option>
+                        <span class="details">Mileage</span>
+                        <input type="number" name="mileage" id="mileage" placeholder="Enter vehicle mileage" required />
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Fuel Type</span>
+                        <select id="fuel_type" name="fuel_type" required>
+                            <option value="" disabled selected>Select Fuel Type</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
                         </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Assigned Driver ID</span>
+                        <input type="number" name="assigned_driver_id" id="assigned_driver_id" placeholder="Enter driver ID" />
                     </div>
                 </div>
                 <div class="button">
-                    <input type="submit" value="Create" />
+                    <input type="submit" value="Add Vehicle" />
                 </div>
             </form>
 
@@ -240,14 +198,15 @@ function generateStrongPassword($length = 8)
 <!--  HTML Code  -->
 
 <!--  js  -->
+<!--  js  -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-    document.getElementById('createUserForm').addEventListener('submit', function(event) {
+    document.getElementById('createVehicleForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
         // Display the loading alert
         Swal.fire({
-            title: 'Creating User...',
+            title: 'Adding Vehicle...',
             text: 'Please wait while we process your request.',
             allowOutsideClick: false,
             didOpen: () => {

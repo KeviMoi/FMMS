@@ -110,7 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 </div>
-
+<!-- HTML Code -->
+ 
 <!-- JavaScript Code -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <script>
@@ -129,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       // Display the loading alert
       Swal.fire({
-        title: 'Creating User...',
+        title: 'Changing password...',
         text: 'Please wait while we process your request.',
         allowOutsideClick: false,
         didOpen: () => {
@@ -154,9 +155,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   });
 </script>
+<!-- JavaScript Code -->
 
-
-<!-- HTML Code -->
 
 <!--  Css  -->
 <style>

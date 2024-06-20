@@ -149,3 +149,100 @@
 [2024-06-12 08:26:29] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
 [2024-06-12 08:26:54] [ERROR] [::1] [User: kevimoi] Failed to change password: New password cannot be the same as the old password.
 [2024-06-12 08:27:29] [SUCCESS] [::1] [User: kevimoi] Password successfully changed.
+[2024-06-13 08:03:12] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-13 08:03:25] [SUCCESS] [::1] [User: kevimoi] User with ID: 74 deleted successfully
+[2024-06-13 08:04:25] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-13 08:04:47] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-13 08:07:38] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-13 08:08:26] [SUCCESS] [::1] [User: JD] Password successfully changed.
+[2024-06-13 08:08:32] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:08:42] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-13 08:09:10] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-13 08:11:13] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-13 08:11:42] [FAILURE] [::1] [User: JD] Incorrect password entered.
+[2024-06-13 08:11:55] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-13 08:12:00] [SUCCESS] [::1] [User: kevimoi] User with ID: 75 deleted successfully
+[2024-06-13 08:13:38] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 60 updated successfully.
+[2024-06-13 08:13:50] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 60 updated successfully.
+[2024-06-13 08:22:47] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-13 08:23:26] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-13 08:24:38] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-13 08:25:01] [ERROR] [::1] [User: JD] Failed to change password: New password and confirm password do not match.
+[2024-06-13 08:25:18] [SUCCESS] [::1] [User: JD] Password successfully changed.
+[2024-06-13 08:25:20] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:21] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:22] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:22] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:23] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:24] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:24] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:25] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:25] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:25] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:26] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:27] [ERROR] [::1] [User: JD] Failed to change password: Old password is incorrect.
+[2024-06-13 08:25:31] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-13 08:25:40] [FAILURE] [::1] [User: JD] Incorrect password entered.
+[2024-06-13 08:27:46] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-13 08:34:31] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-13 08:34:50] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-13 08:39:22] [ERROR] [::1] [User: JD] Failed to change password: New password cannot be the same as the old password.
+[2024-06-13 08:39:58] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-13 08:40:04] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-13 08:40:30] [ERROR] [::1] [User: JD] Failed to change password: New password cannot be the same as the old password.
+[2024-06-13 08:40:35] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-13 08:40:44] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-13 08:40:55] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 76 updated successfully.
+[2024-06-13 09:26:54] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-13 09:35:00] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345C, VIN - JHMZE1371YT004235
+[2024-06-13 16:05:36] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-13 16:06:06] [ERROR] [::1] [User: kevimoi] Error adding vehicle: Duplicate entry 'KDQ345C' for key 'license_plate'
+[2024-06-13 16:06:34] [ERROR] [::1] [User: kevimoi] Error adding vehicle: Duplicate entry 'JHMZE1371YT004235' for key 'vin'
+[2024-06-13 16:06:46] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345D, VIN - JHMZE1371YT004239
+[2024-06-13 16:13:19] [ERROR] [::1] [User: kevimoi] Error adding vehicle: Duplicate entry 'JHMZE1371YT004235' for key 'vin'
+[2024-06-13 16:13:46] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-13 16:13:55] [ERROR] [::1] [User: kevimoi] Error adding vehicle: Duplicate entry 'JHMZE1371YT004235' for key 'vin'
+[2024-06-13 16:57:30] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KAU 747Z, VIN - 1GNEC13T31J130186
+[2024-06-13 17:11:27] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-14 08:11:22] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-16 08:47:42] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-16 09:12:43] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 76 updated successfully.
+[2024-06-16 09:15:37] [SUCCESS] [::1] [User: kevimoi] Vehicle with ID: 4 deleted successfully
+[2024-06-16 09:28:38] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-16 09:43:59] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 54 updated successfully.
+[2024-06-16 09:44:06] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 54 updated successfully.
+[2024-06-16 09:44:14] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 60 updated successfully.
+[2024-06-16 09:44:20] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 76 updated successfully.
+[2024-06-16 09:44:32] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 60 updated successfully.
+[2024-06-16 09:44:41] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 60 updated successfully.
+[2024-06-16 09:44:45] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 60 updated successfully.
+[2024-06-16 09:45:55] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-16 09:46:30] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-16 14:49:45] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-16 22:09:09] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-17 08:39:33] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-17 08:40:16] [SUCCESS] [::1] [User: kevimoi] Vehicle with ID: 7 deleted successfully
+[2024-06-17 08:57:25] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KAU 474Z, VIN - JHMZE1371YT006235
+[2024-06-18 10:26:12] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-18 11:21:11] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ 345R, VIN - JHMZE1371YT007235
+[2024-06-18 11:34:36] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 1 updated successfully.
+[2024-06-18 11:38:14] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345H, VIN - JHMZE1371YT004935
+[2024-06-18 11:38:43] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 10 updated successfully.
+[2024-06-18 11:39:09] [SUCCESS] [::1] [User: kevimoi] Vehicle with vehicle ID: 10 deleted successfully
+[2024-06-18 11:43:10] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:43:21] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:43:27] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:43:32] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:43:37] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:43:54] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:44:09] [ERROR] [::1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-06-18 11:44:13] [ERROR] [::1] [User: kevimoi] Error adding vehicle: Duplicate entry 'KDQ345C' for key 'license_plate'
+[2024-06-18 11:44:23] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345K, VIN - JHMZE1371YT004235
+[2024-06-18 11:44:32] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 12 updated successfully.
+[2024-06-20 14:03:11] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-20 14:03:44] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345C, VIN - JHMZE1371YT006235
+[2024-06-20 14:03:56] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 0 updated successfully.
+[2024-06-20 14:11:58] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345C, VIN - JHMZE1371YT007235
+[2024-06-20 14:13:24] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 1 updated successfully.
+[2024-06-20 14:13:29] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-20 14:13:33] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.

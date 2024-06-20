@@ -38,6 +38,7 @@ $(document).ready(function() {
     setupDynamicModal('addUser', 'create_new_user_form.php');
     setupDynamicModal('changePassword', 'change_password.php');
     setupDynamicModal('viewUsers', 'users.php');
-
+    setupDynamicModal('addVehicle', 'add_vehicle.php');
+    setupDynamicModal('viewVehicles', 'vehicles.php');
     // Add more calls to as needed for other elements and files
 });

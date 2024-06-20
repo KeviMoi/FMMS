@@ -57,22 +57,14 @@ $first_name = explode(' ', trim($full_name))[0];
                         <h3>Vehicles</h3>
                     </a>
                     <div class="submenu">
-                        <a href="#">
+                        <a href="#" id="addVehicle">
                             <span class="material-icons-sharp">add</span>
                             <h3>Add Vehicle</h3>
                         </a>
-                        <a href="#">
+                        <a href="#" id="viewVehicles">
                             <span class="material-icons-sharp"> view_list </span>
                             <h3>View Vehicles</h3>
-                        </a>
-                        <a href="#">
-                            <span class="material-icons-sharp"> edit </span>
-                            <h3>Update Vehicle</h3>
-                        </a>
-                        <a href="#">
-                            <span class="material-icons-sharp"> remove </span>
-                            <h3>Remove Vehicle</h3>
-                        </a>
+                        </a>                    
                     </div>
                 </div>
                 <div class="menu-item">
