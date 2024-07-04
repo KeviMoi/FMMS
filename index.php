@@ -110,7 +110,7 @@ try {
         <nav class="nav">
             <div class="nav-logo">
                 <img src="assets/images/white-logo.png" alt="Logo" width="65" height="65" />
-                <p>Makvo Limited | FMMS</p>
+                <p>Makvo Limited | Fleet Maintenance Management System (FMMS)</p>
             </div>
         </nav>
         <div class="form-box">

@@ -246,3 +246,192 @@
 [2024-06-20 14:13:24] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 1 updated successfully.
 [2024-06-20 14:13:29] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
 [2024-06-20 14:13:33] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-20 15:27:19] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-20 15:27:22] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-20 15:29:09] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 09:16:02] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 09:16:20] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 1 updated successfully.
+[2024-06-22 09:16:26] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-22 09:16:30] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 09:29:09] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 11:39:35] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 15:06:24] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-22 15:06:29] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 15:11:49] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 15:16:16] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-22 15:16:20] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 15:16:23] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-22 15:16:28] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 16:46:50] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-22 16:47:07] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-22 16:47:16] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-24 14:46:58] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-24 14:51:54] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 1 updated successfully.
+[2024-06-24 14:52:01] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-24 14:52:05] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-24 18:58:46] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-24 18:59:49] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-24 19:00:37] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-24 19:00:42] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-24 19:01:01] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 76 updated successfully.
+[2024-06-24 19:01:20] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-24 19:01:24] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-25 07:38:01] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 07:39:17] [SUCCESS] [::1] [User: kevimoi] User with ID: 76 deleted successfully
+[2024-06-25 07:42:40] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-25 07:43:03] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-25 07:43:21] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-06-25 07:43:52] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD1, Email - kev@gmail.com
+[2024-06-25 07:44:00] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-25 07:44:40] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-25 07:44:51] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-25 07:45:11] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-25 07:47:42] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 07:47:50] [SUCCESS] [::1] [User: JD1] User logged in successfully.
+[2024-06-25 07:48:35] [SUCCESS] [::1] [User: JD1] User logged out successfully.
+[2024-06-25 07:48:48] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-06-25 07:55:05] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-06-25 07:55:08] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 08:04:57] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:36:27] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:36:52] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:36:57] [FAILURE] [::1] [User: JD] Incorrect password entered.
+[2024-06-25 18:37:18] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:37:44] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:37:49] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:37:57] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:38:17] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:43:30] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:43:35] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:43:39] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:43:43] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:43:49] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:44:22] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:44:25] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:44:44] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-25 18:45:09] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-25 18:45:25] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-26 13:47:39] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-26 13:54:48] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-26 14:04:17] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-26 14:04:24] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-26 14:04:51] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-26 14:04:57] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-27 11:08:15] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-27 11:13:26] [SUCCESS] [::1] [User: kevimoi] User with ID: 54 deleted successfully
+[2024-06-27 11:13:40] [SUCCESS] [::1] [User: kevimoi] User with ID: 60 deleted successfully
+[2024-06-27 11:18:59] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-27 11:19:01] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-27 11:21:32] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - Leo, Email - lionellangat2000@gmail.com
+[2024-06-27 11:22:51] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - RB, Email - roybiegon@gmail.com
+[2024-06-27 11:27:11] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 4 updated successfully.
+[2024-06-27 11:27:26] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 4 updated successfully.
+[2024-06-27 11:28:53] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 4 updated successfully.
+[2024-06-27 11:29:12] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 5 updated successfully.
+[2024-06-27 11:30:29] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 6 updated successfully.
+[2024-06-27 11:30:45] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 4 updated successfully.
+[2024-06-27 11:31:15] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 7 updated successfully.
+[2024-06-27 11:31:59] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 8 updated successfully.
+[2024-06-27 11:32:15] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 8 updated successfully.
+[2024-06-27 11:32:45] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 9 updated successfully.
+[2024-06-27 11:33:52] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 10 updated successfully.
+[2024-06-27 11:34:21] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 11 updated successfully.
+[2024-06-27 11:34:43] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 12 updated successfully.
+[2024-06-27 11:36:17] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 13 updated successfully.
+[2024-06-27 11:40:48] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 3 updated successfully.
+[2024-06-27 11:41:03] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 5 updated successfully.
+[2024-06-27 11:41:13] [SUCCESS] [::1] [User: kevimoi] User's details with ID: 13 updated successfully.
+[2024-06-27 11:41:53] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 1 updated successfully.
+[2024-06-27 11:42:10] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-06-27 11:42:15] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 4 updated successfully.
+[2024-06-27 11:42:23] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 5 updated successfully.
+[2024-06-27 11:42:33] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 7 updated successfully.
+[2024-06-27 11:42:39] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 8 updated successfully.
+[2024-06-27 11:42:45] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 9 updated successfully.
+[2024-06-27 11:42:50] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 10 updated successfully.
+[2024-06-27 11:48:02] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-27 11:48:18] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-27 11:50:16] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-27 11:51:29] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-27 11:55:21] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-27 11:55:51] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-27 11:56:50] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-27 12:01:26] [SUCCESS] [::1] [User: kevimoi] Vehicle details with vehicle ID: 9 updated successfully.
+[2024-06-28 10:30:25] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-28 10:45:19] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - MW, Email - kemoi.kev@gmail.com
+[2024-06-28 10:46:22] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-28 10:46:30] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-06-28 10:47:14] [SUCCESS] [::1] [User: MW] Password successfully changed.
+[2024-06-28 10:47:16] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-06-28 10:47:37] [FAILURE] [::1] [User: MW] Incorrect password entered.
+[2024-06-28 10:47:55] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-06-28 10:48:46] [SUCCESS] [::1] [User: MW] User's details with ID: 14 updated successfully.
+[2024-06-28 10:48:54] [SUCCESS] [::1] [User: MW] User's details with ID: 14 updated successfully.
+[2024-06-28 10:49:17] [SUCCESS] [::1] [User: MW] User's details with ID: 14 updated successfully.
+[2024-06-28 10:49:28] [SUCCESS] [::1] [User: MW] User's details with ID: 14 updated successfully.
+[2024-06-28 10:50:20] [ERROR] [::1] [User: MW] Error adding vehicle: Cannot add or update a child row: a foreign key constraint fails (`fmms_db`.`vehicles`, CONSTRAINT `vehicles_ibfk_1` FOREIGN KEY (`assigned_driver_id`) REFERENCES `users` (`user_id`))
+[2024-06-28 10:50:40] [SUCCESS] [::1] [User: MW] Vehicle successfully added: License Plate - KDQ345C, VIN - JHMZE1371YT006235
+[2024-06-28 10:52:22] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-06-28 10:52:25] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-06-28 10:52:48] [SUCCESS] [::1] [User: MW] User's details with ID: 14 updated successfully.
+[2024-06-28 10:52:52] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-06-28 10:52:59] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-06-28 10:55:31] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-06-28 10:55:38] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-28 10:56:10] [SUCCESS] [::1] [User: kevimoi] User with ID: 14 deleted successfully
+[2024-06-28 10:56:29] [SUCCESS] [::1] [User: kevimoi] Vehicle with vehicle ID: 12 deleted successfully
+[2024-06-28 11:04:48] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-28 11:04:59] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-28 11:13:58] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-28 11:42:01] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-06-28 11:43:59] [ERROR] [::1] [User: kevimoi] User addition failed due to validation errors
+[2024-06-28 11:45:42] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - MW, Email - kemoi.kev@gmail.com
+[2024-06-28 11:47:25] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-06-28 11:47:51] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-02 09:12:25] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-02 09:14:01] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-02 09:14:11] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-02 09:16:11] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-02 09:16:21] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-07-02 09:17:05] [ERROR] [::1] [User: MW] Failed to change password: New password and confirm password do not match.
+[2024-07-02 09:17:18] [SUCCESS] [::1] [User: MW] Password successfully changed.
+[2024-07-02 09:17:21] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-07-02 09:17:24] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-07-02 09:17:50] [SUCCESS] [::1] [User: MW] User's details with ID: 15 updated successfully.
+[2024-07-02 09:17:55] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-07-02 09:17:57] [SUCCESS] [::1] [User: MW] User logged in successfully.
+[2024-07-02 10:42:52] [SUCCESS] [::1] [User: MW] User logged out successfully.
+[2024-07-02 10:42:56] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-02 10:44:09] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - Marshall_W, Email - kvnkemoi@yahoo.com
+[2024-07-02 10:48:40] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-02 10:48:49] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-02 10:49:13] [SUCCESS] [::1] [User: Marshall_W] Password successfully changed.
+[2024-07-02 10:49:17] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-02 10:49:35] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-02 11:29:55] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-02 11:30:56] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-02 11:31:44] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - Marshall_W, Email - kvnkemoi@yahoo.com
+[2024-07-02 11:32:11] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-02 11:32:18] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-02 11:32:45] [SUCCESS] [::1] [User: Marshall_W] Password successfully changed.
+[2024-07-02 11:32:46] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-02 11:32:53] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-02 12:25:40] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-02 12:25:45] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-02 20:07:36] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-02 20:07:39] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-02 20:18:57] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-02 20:19:02] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-03 14:12:26] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-03 14:12:56] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-03 14:12:58] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-03 14:19:42] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-03 14:19:50] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-03 14:21:15] [SUCCESS] [::1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ345C, VIN - JHMZE1371YT004935
+[2024-07-03 14:29:02] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-03 14:29:05] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-03 14:33:12] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-04 14:02:31] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-04 19:47:28] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-04 19:47:55] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-04 19:47:58] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.

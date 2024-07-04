@@ -3,14 +3,61 @@
 session_start();
 
 // Check if the user is logged in, if not redirect to login page
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['full_name'])) {
     header("Location: index.php");
     exit;
 }
 
-// Retrieve the username from the session
+// Retrieve the username, full name, and user ID from the session
 $username = $_SESSION['username'];
+$full_name = $_SESSION['full_name'];
+$user_id = $_SESSION['user_id'];
+
+// Extract the first name from the full name
+$first_name = explode(' ', trim($full_name))[0];
+
+// Include the database connection file
+include 'db_config/db_conn.php';
+
+// Query to get the vehicle details assigned to the driver
+$sql = "SELECT * FROM vehicles WHERE assigned_driver_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the vehicle details
+$vehicle = $result->fetch_assoc();
+
+// Check if a vehicle is assigned to the driver
+if ($vehicle) {
+    $vehicle_id = $vehicle['vehicle_id'];
+    $license_plate = $vehicle['license_plate'];
+    $make = $vehicle['make'];
+    $model = $vehicle['model'];
+    $year = $vehicle['year'];
+    $vin = $vehicle['vin'];
+    $mileage = $vehicle['mileage'];
+    $fuel_type = $vehicle['fuel_type'];
+    $status = $vehicle['status'];
+} else {
+    $vehicle_id = null;
+    $license_plate = "No vehicle assigned";
+    $make = "";
+    $model = "";
+    $year = "";
+    $vin = "";
+    $mileage = "";
+    $fuel_type = "";
+    $status = "";
+}
+
+$_SESSION['vehicle_id'] = $vehicle_id;
+// Close the statement and connection
+$stmt->close();
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,11 +95,17 @@ $username = $_SESSION['username'];
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="schedule_maintenance">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>Add Schedule</h3>
+                </a>
+                <a href="#" id="driver_schedules">
                     <span class="material-icons-sharp">
                         schedule
                     </span>
-                    <h3>Schedule Maintenance</h3>
+                    <h3>My Schedules</h3>
                 </a>
                 <a href="#">
                     <span class="material-icons-sharp">
@@ -191,7 +244,7 @@ $username = $_SESSION['username'];
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b><?php echo htmlspecialchars($username); ?></b></p>
+                        <p>Hey, <b><?php echo htmlspecialchars($first_name); ?></b></p>
                         <small class="text-muted">Driver</small>
                     </div>
                 </div>
@@ -265,9 +318,11 @@ $username = $_SESSION['username'];
             </div>
 
         </div>
+        <div id="modalPlaceholder"></div>
     </div>
     <script src="assets/js/dummy_table.js"></script>
     <script src="assets/js/dashboard_script.js"></script>
+    <script src="assets/js/modal_loader_script.js"></script>
 </body>
 
 </html>

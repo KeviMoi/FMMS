@@ -29,7 +29,7 @@ if ($_SESSION['status'] !== 'active') {
 $role = $_SESSION['role'];
 $passwordChange = $_SESSION['password_change'];
 
-if ($passwordChange == false && $role == "manager") {
+if ($passwordChange == false) {
     // Trigger JavaScript to load the change password modal for manager
     echo '<!DOCTYPE html>
     <html lang="en">

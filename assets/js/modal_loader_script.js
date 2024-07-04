@@ -40,5 +40,9 @@ $(document).ready(function() {
     setupDynamicModal('viewUsers', 'users.php');
     setupDynamicModal('addVehicle', 'add_vehicle.php');
     setupDynamicModal('viewVehicles', 'vehicles.php');
+    setupDynamicModal('schedule_maintenance', 'book_schedule.php');
+    setupDynamicModal('driver_schedules', 'driver_schedules.php');
+
+    
     // Add more calls to as needed for other elements and files
 });

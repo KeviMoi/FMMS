@@ -263,7 +263,7 @@ $first_name = explode(' ', trim($full_name))[0];
 
     <script src="assets/js/dummy_table.js"></script>
     <script src="assets/js/dashboard_script.js"></script>
-    <script src="assets/js/fleet_manager_dashboard_script.js"></script>
+    <script src="assets/js/modal_loader_script.js"></script>
 </body>
 
 </html>

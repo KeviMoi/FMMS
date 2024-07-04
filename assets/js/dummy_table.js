@@ -3,13 +3,13 @@ const Orders = [
         Registration_Number: 'KAW 665D',
         Maintenance_Type: 'Routine Service',
         Time: '2024-04-28 15:30:00',
-        status: 'Pending'
+        status: 'in servirce'
     },
     {
         Registration_Number: 'KAU 474Z',
         Maintenance_Type: 'Engine Repair',
         Time: '2024-04-28 15:30:00',
-        status: 'Declined'
+        status: 'Active'
     },
     {
         Registration_Number: 'KBK 911F',
@@ -21,7 +21,7 @@ const Orders = [
         Registration_Number: 'KAK 697Q',
         Maintenance_Type: 'Body Work',
         Time: '2024-04-28 15:30:00',
-        status: 'Declined'
+        status: 'in servirce'
     },
     {
         Registration_Number: 'KCK 450V',
@@ -33,12 +33,12 @@ const Orders = [
         Registration_Number: 'KAK 697Q',
         Maintenance_Type: 'Body Work',
         Time: '2024-04-28 15:30:00',
-        status: 'Declined'
+        status: 'Active'
     },
     {
         Registration_Number: 'KAK 697Q',
         Maintenance_Type: 'Body Work',
         Time: '2024-04-28 15:30:00',
-        status: 'Declined'
+        status: 'in servirce'
     },
 ]

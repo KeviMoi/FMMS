@@ -24,7 +24,7 @@ Orders.forEach(order => {
         <td>${order.Registration_Number}</td>
         <td>${order.Maintenance_Type}</td>
         <td>${order.Time}</td>
-        <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.status}</td>
+        <td class="${order.status === 'Declined' ? 'danger' : order.status === 'in servirce' ? 'warning' : 'primary'}">${order.status}</td>
         <td class="primary">Details</td>
     `;
     tr.innerHTML = trContent;

@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     function validatePhoneNumber($phone_number)
     {
-        return preg_match("/^\+?[0-9]{10,15}$/", $phone_number);
+        return preg_match("/^(?:\+?254|0)?(7|1)[0-9]{8}$/", $phone_number);
     }
 
     function validateDOB($dob)
