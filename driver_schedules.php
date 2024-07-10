@@ -5,11 +5,9 @@ include_once 'db_config/db_conn.php';
 // Start the session
 session_start();
 
-// Check if vehicle_id is set in the session
 if (!isset($_SESSION['vehicle_id'])) {
     die('Vehicle ID not found in session.');
 }
-
 $vehicle_id = $_SESSION['vehicle_id'];
 $current_date = date('Y-m-d');
 ?>
