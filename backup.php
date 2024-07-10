@@ -1,107 +1,106 @@
-// For fetch_timeslots.php
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-require_once 'db_config/db_conn.php';
-
-$date = $_POST['date'];
-$task = $_POST['task'];
-
-// Get task_id and estimated_time from the maintenance_tasks table
-$query = "SELECT task_id, estimated_time FROM maintenance_tasks WHERE task_name = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param('s', $task);
-$stmt->execute();
-$result = $stmt->get_result();
-$task_row = $result->fetch_assoc();
-$task_id = $task_row['task_id'];
-$estimated_time = $task_row['estimated_time'];
-
-// Get all service centers that perform the selected task
-$query = "SELECT sc.service_center_id, sc.service_center_name 
-          FROM service_centers sc
-          WHERE sc.task_id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param('i', $task_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$service_centers = [];
-while ($row = $result->fetch_assoc()) {
-    $service_centers[$row['service_center_id']] = [
-        'name' => $row['service_center_name'],
-        'timeslots' => []
-    ];
-}
-
-// Get maintenance schedules for the selected date and task
-$query = "SELECT service_center_id, schedule_start_time, schedule_end_time 
-          FROM maintenance_schedule 
-          WHERE task_id = ? AND schedule_date = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param('is', $task_id, $date);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$occupied_timeslots = [];
-while ($row = $result->fetch_assoc()) {
-    $occupied_timeslots[$row['service_center_id']][] = [
-        'start_time' => $row['schedule_start_time'],
-        'end_time' => $row['schedule_end_time']
-    ];
-}
-
-// Define the working hours (example: 08:00 AM - 05:00 PM)
-$start_of_day = new DateTime('08:00:00');
-$end_of_day = new DateTime('18:00:00');
-
-// Determine available timeslots for each service center
-foreach ($service_centers as $service_center_id => $service_center) {
-    $current_time = clone $start_of_day;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Maintenance Booking</title>
+    <link rel="stylesheet" href="assets/css/message_box.css">
     
-    while ($current_time < $end_of_day) {
-        $end_time = clone $current_time;
-        $end_time->modify("+{$estimated_time} hours");
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-        if ($end_time > $end_of_day) {
-            break;
-        }
+<body>
+    <div id="modalDialog" class="modal" style="display: block">
+        <div class="modal-content animate-top">
+            <div class="modal-header">
+                <h5 class="modal-title">Vehicle Maintenance Booking</h5>
+                <button type="button" class="close close-icon">
+                    <span class="material-icons-sharp">close</span>
+                </button>
+            </div>
+            <div class="modal_container">
+                <div id="message-container"></div>
+                <form action="" method="POST" id="maintenanceBookingForm">
+                    <div class="details">
+                        <div class="input-box">
+                            <span class="details">Date</span>
+                            <input type="date" name="date" id="date" required />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Maintenance Task</span>
+                            <input type="text" name="maintenance_task" id="maintenance_task" placeholder="Enter maintenance task" required />
+                        </div>
+                        <div class="input-box full-width">
+                            <span class="details">Additional Information</span>
+                            <textarea name="additional_info" id="additional_info" placeholder="Enter additional information" required></textarea>
+                        </div>
+                        <input type="hidden" name="service_center_id" id="selected_service_center_id" required />
+                        <input type="hidden" name="start_time" id="selected_start_time" required />
+                        <input type="hidden" name="end_time" id="selected_end_time" required />
+                    </div>
+                    <div class="service-centers">
+                        <h5><b>Available timeslots</b></h5>
+                        <div id="service-center-container"></div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Book Maintenance" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        $is_available = true;
-        if (isset($occupied_timeslots[$service_center_id])) {
-            foreach ($occupied_timeslots[$service_center_id] as $timeslot) {
-                $slot_start = new DateTime($timeslot['start_time']);
-                $slot_end = new DateTime($timeslot['end_time']);
+    <script>
+        $(document).ready(function() {
+            function fetchAvailableTimeslots() {
+                const date = $('#date').val();
+                const task = $('#maintenance_task').val();
 
-                if (
-                    ($current_time >= $slot_start && $current_time < $slot_end) ||
-                    ($end_time > $slot_start && $end_time <= $slot_end) ||
-                    ($current_time <= $slot_start && $end_time >= $slot_end)
-                ) {
-                    $is_available = false;
-                    break;
+                if (date && task) {
+                    $.ajax({
+                        url: 'fetch_timeslots.php',
+                        type: 'POST',
+                        data: {
+                            date: date,
+                            task: task
+                        },
+                        success: function(data) {
+                            $('#service-center-container').html(data);
+                        }
+                    });
                 }
             }
-        }
 
-        $service_centers[$service_center_id]['timeslots'][] = [
-            'start_time' => $current_time->format('H:i:s'),
-            'end_time' => $end_time->format('H:i:s'),
-            'status' => $is_available ? 'available' : 'unavailable'
-        ];
+            $('#date, #maintenance_task').change(fetchAvailableTimeslots);
 
-        $current_time->modify("+{$estimated_time} hours");
-    }
-}
+            $('#service-center-container').on('click', '.timeslot.available', function() {
+                $('.timeslot').removeClass('selected'); // Clear previous selection
+                $(this).addClass('selected'); // Mark current selection
 
-// Output the available timeslots for each service center
-foreach ($service_centers as $service_center_id => $service_center) {
-    echo "<div class='service-center'>";
-    echo "<h6><b>{$service_center['name']}</b></h6>";
-    echo "<div class='timeslots'>";
-    foreach ($service_center['timeslots'] as $timeslot) {
-        $status_class = $timeslot['status'] == 'available' ? 'available' : 'unavailable';
-        echo "<div class='timeslot {$status_class}' data-service-center-id='{$service_center_id}' data-start-time='{$timeslot['start_time']}' data-end-time='{$timeslot['end_time']}'>{$timeslot['start_time']} to {$timeslot['end_time']}</div>";
-    }
-    echo "</div></div>";
-}
-?>
+                $('#selected_service_center_id').val($(this).data('service-center-id'));
+                $('#selected_start_time').val($(this).data('start-time'));
+                $('#selected_end_time').val($(this).data('end-time'));
+            });
+
+            $('#maintenanceBookingForm').submit(function(e) {
+                e.preventDefault();
+
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: 'book_maintenance.php',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        $('#message-container').html(response);
+                        fetchAvailableTimeslots();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

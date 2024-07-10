@@ -435,3 +435,22 @@
 [2024-07-04 19:47:28] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
 [2024-07-04 19:47:55] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
 [2024-07-04 19:47:58] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-09 15:37:00] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-09 15:39:37] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-09 15:39:44] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-09 15:42:30] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-09 15:42:36] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-09 15:44:48] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-07-09 15:44:58] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-09 15:46:38] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-09 15:47:38] [SUCCESS] [::1] [User: JD] Password successfully changed.
+[2024-07-09 15:47:43] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-09 15:48:01] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-10 09:47:50] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-10 09:48:03] [SUCCESS] [::1] [User: kevimoi] User with ID: 4 deleted successfully
+[2024-07-10 09:49:58] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-10 09:50:17] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-10 10:02:44] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-10 10:02:53] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-10 10:05:16] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-10 10:05:20] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.

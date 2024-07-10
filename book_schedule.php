@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Maintenance Booking</title>
     <link rel="stylesheet" href="assets/css/message_box.css">
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -29,11 +28,14 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Maintenance Task</span>
-                            <input type="text" name="maintenance_task" id="maintenance_task" placeholder="Enter maintenance task" required />
+                            <select name="maintenance_task" id="maintenance_task" required>
+                                <option value="" disabled selected>Select a maintenance task</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
                         </div>
                         <div class="input-box full-width">
                             <span class="details">Additional Information</span>
-                            <textarea name="additional_info" id="additional_info" placeholder="Enter additional information" required></textarea>
+                            <textarea name="additional_info" id="additional_info" placeholder="Enter additional information" maxlength="500"></textarea>
                         </div>
                         <input type="hidden" name="service_center_id" id="selected_service_center_id" required />
                         <input type="hidden" name="start_time" id="selected_start_time" required />
@@ -51,8 +53,24 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         $(document).ready(function() {
+            // Function to fetch maintenance tasks from the server
+            function fetchMaintenanceTasks() {
+                $.ajax({
+                    url: 'fetch_maintenance_tasks.php',
+                    type: 'GET',
+                    success: function(data) {
+                        $('#maintenance_task').append(data); // Append options to select
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching maintenance tasks:', error);
+                    }
+                });
+            }
+
+            // Function to fetch available timeslots based on selected date and task
             function fetchAvailableTimeslots() {
                 const date = $('#date').val();
                 const task = $('#maintenance_task').val();
@@ -66,23 +84,57 @@
                             task: task
                         },
                         success: function(data) {
-                            $('#service-center-container').html(data);
+                            $('#service-center-container').html(data); // Display available timeslots
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error fetching timeslots:', error);
                         }
                     });
                 }
             }
 
-            $('#date, #maintenance_task').change(fetchAvailableTimeslots);
+            // Validate selected date to be within the allowed range
+            function validateDate() {
+                const selectedDate = new Date($('#date').val());
+                const today = new Date();
+                const minDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+                const maxDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 90);
 
+                if (selectedDate < minDate || selectedDate > maxDate) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Date',
+                        text: 'Date must be at least 24 hours in the future and not more than 90 days ahead.',
+                    });
+                    $('#date').val('');
+                    return false;
+                }
+                return true;
+            }
+
+            // Initialize form with maintenance tasks and attach event listeners
+            fetchMaintenanceTasks();
+
+            $('#date').change(function() {
+                if (validateDate()) {
+                    fetchAvailableTimeslots();
+                }
+            });
+
+            $('#maintenance_task').change(fetchAvailableTimeslots);
+
+            // Handle click on available timeslot to select it
             $('#service-center-container').on('click', '.timeslot.available', function() {
-                $('.timeslot').removeClass('selected'); // Clear previous selection
-                $(this).addClass('selected'); // Mark current selection
+                $('.timeslot').removeClass('selected');
+                $(this).addClass('selected');
 
+                // Set hidden inputs with selected timeslot details
                 $('#selected_service_center_id').val($(this).data('service-center-id'));
                 $('#selected_start_time').val($(this).data('start-time'));
                 $('#selected_end_time').val($(this).data('end-time'));
             });
 
+            // Handle form submission to book maintenance
             $('#maintenanceBookingForm').submit(function(e) {
                 e.preventDefault();
 
@@ -93,8 +145,11 @@
                     type: 'POST',
                     data: formData,
                     success: function(response) {
-                        $('#message-container').html(response);
-                        fetchAvailableTimeslots();
+                        $('#message-container').html(response); // Display booking response
+                        fetchAvailableTimeslots(); // Refresh available timeslots
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error booking maintenance:', error);
                     }
                 });
             });
@@ -104,6 +159,7 @@
 </body>
 
 </html>
+
 
 
 

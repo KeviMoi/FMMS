@@ -1,5 +1,12 @@
 <?php
+session_start();
 require_once 'db_config/db_conn.php';
+
+if(!isset($_SESSION['vehicle_id'])) {
+    die("Vehicle ID not set in session.");
+}
+
+$vehicle_id = $_SESSION['vehicle_id'];
 
 $date = $_POST['date'];
 $task = $_POST['maintenance_task'];
@@ -15,9 +22,6 @@ $stmt->bind_param('s', $task);
 $stmt->execute();
 $result = $stmt->get_result();
 $task_id = $result->fetch_assoc()['task_id'];
-
-// Fetch the vehicle_id (Assuming you have a way to get the vehicle_id)
-$vehicle_id = 1; // Replace this with actual vehicle_id logic
 
 // Query to book maintenance
 $query = "INSERT INTO maintenance_schedule (vehicle_id, task_id, service_center_id, schedule_date, schedule_start_time, schedule_end_time, additional_info, status)

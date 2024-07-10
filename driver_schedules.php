@@ -11,6 +11,7 @@ if (!isset($_SESSION['vehicle_id'])) {
 }
 
 $vehicle_id = $_SESSION['vehicle_id'];
+$current_date = date('Y-m-d');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -295,7 +296,7 @@ $vehicle_id = $_SESSION['vehicle_id'];
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT * FROM maintenance_schedule WHERE vehicle_id = $vehicle_id";
+                                $query = "SELECT * FROM maintenance_schedule WHERE vehicle_id = $vehicle_id AND schedule_date >= '$current_date' AND status != 'cancelled'";
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     echo "<tr>";
@@ -313,7 +314,6 @@ $vehicle_id = $_SESSION['vehicle_id'];
                                 }
                                 ?>
                             </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
@@ -347,100 +347,162 @@ $vehicle_id = $_SESSION['vehicle_id'];
         }
 
         function rescheduleSchedule(scheduleId) {
-            Swal.fire({
-                title: 'Reschedule',
-                html: `
-            <style>
-                .swal2-popup {
-                    width: 600px !important;
-                    height: auto !important;
-                }
-                .swal2-input {
-                    width: 100% !important;
-                }
-                .swal2-textarea {
-                    width: 100% !important;
-                }
-            </style>
-            <input type="date" id="newDate" class="swal2-input" placeholder="New Date">
-            <input type="text" id="task" class="swal2-input" placeholder="Task">`,
-                showCancelButton: true,
-                confirmButtonText: 'Next',
-                preConfirm: () => {
-                    const newDate = document.getElementById('newDate').value;
-                    const task = document.getElementById('task').value;
-                    if (!newDate || !task) {
-                        Swal.showValidationMessage('Please enter all fields');
-                        return false;
-                    }
-                    return {
-                        newDate,
-                        task
-                    };
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    const {
-                        newDate,
-                        task
-                    } = result.value;
+    Swal.fire({
+        title: 'Reschedule',
+        html: `
+        <style>
+            .swal2-popup {
+                width: 600px !important;
+                height: auto !important;
+            }
+            .swal2-input {
+                width: 100% !important;
+            }
+            .swal2-textarea {
+                width: 100% !important;
+            }
+        </style>
+        <input type="date" id="newDate" class="swal2-input" placeholder="New Date">
+        <input type="text" id="task" class="swal2-input" placeholder="Task">`,
+        showCancelButton: true,
+        confirmButtonText: 'Next',
+        preConfirm: () => {
+            const newDate = document.getElementById('newDate').value;
+            const task = document.getElementById('task').value;
+            if (!newDate || !task) {
+                Swal.showValidationMessage('Please enter all fields');
+                return false;
+            }
+            return {
+                newDate,
+                task
+            };
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const { newDate, task } = result.value;
 
-                    // Fetch available timeslots based on the selected date and task
-                    fetch('fetch_timeslots.php', {
+            // Fetch available timeslots based on the selected date and task
+            fetch('fetch_timeslots.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    date: newDate,
+                    task: task
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                Swal.fire({
+                    title: 'Select Timeslot',
+                    html: `
+                    <style>
+                        .swal2-popup {
+                            width: 800px !important;
+                            height: auto !important;
+                        }
+                        .timeslots {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+                        .timeslot {
+                            flex: 1 0 20%;
+                            padding: 12px;
+                            margin: 5px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+                        }
+                        .timeslot.available {
+                            background-color: #28a745;
+                            color: white;
+                        }
+                        .timeslot.unavailable {
+                            background-color: #ccc;
+                            color: #666;
+                            cursor: not-allowed;
+                        }
+                        .timeslot.selected {
+                            background-color: #6C9BCF;
+                        }
+                    </style>
+                    <div class="timeslots">
+                        ${data}
+                    </div>`,
+                    showCancelButton: true,
+                    confirmButtonText: 'Reschedule',
+                    didOpen: () => {
+                        // Add event listeners to each timeslot for selection
+                        const timeslots = document.querySelectorAll('.timeslot.available');
+                        timeslots.forEach(timeslot => {
+                            timeslot.addEventListener('click', () => {
+                                timeslots.forEach(ts => ts.classList.remove('selected'));
+                                timeslot.classList.add('selected');
+                            });
+                        });
+                    },
+                    preConfirm: () => {
+                        const selectedTimeslot = document.querySelector('.timeslot.selected');
+                        if (!selectedTimeslot) {
+                            Swal.showValidationMessage('Please select a timeslot');
+                            return false;
+                        }
+                        return {
+                            serviceCenterId: selectedTimeslot.dataset.serviceCenterId,
+                            startTime: selectedTimeslot.dataset.startTime,
+                            endTime: selectedTimeslot.dataset.endTime
+                        };
+                    }
+                }).then((res) => {
+                    if (res.isConfirmed) {
+                        const { serviceCenterId, startTime, endTime } = res.value;
+                        
+                        // Make a request to update the schedule in the database
+                        fetch('reschedule_schedule.php', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/x-www-form-urlencoded',
                             },
                             body: new URLSearchParams({
-                                date: newDate,
-                                task: task
+                                schedule_id: scheduleId,
+                                service_center_id: serviceCenterId,
+                                schedule_date: newDate,
+                                schedule_start_time: startTime,
+                                schedule_end_time: endTime
                             })
                         })
                         .then(response => response.text())
                         .then(data => {
                             Swal.fire({
-                                title: 'Select Timeslot',
-                                html: data,
-                                showCancelButton: true,
-                                confirmButtonText: 'Reschedule',
-                                didOpen: () => {
-                                    // Add event listeners to each timeslot for selection
-                                    const timeslots = document.querySelectorAll('.timeslot.available');
-                                    timeslots.forEach(timeslot => {
-                                        timeslot.addEventListener('click', () => {
-                                            timeslots.forEach(ts => ts.classList.remove('selected'));
-                                            timeslot.classList.add('selected');
-                                        });
-                                    });
-                                },
-                                preConfirm: () => {
-                                    const selectedTimeslot = document.querySelector('.timeslot.selected');
-                                    if (!selectedTimeslot) {
-                                        Swal.showValidationMessage('Please select a timeslot');
-                                        return false;
-                                    }
-                                    return selectedTimeslot.dataset.timeslotId;
-                                }
-                            }).then((res) => {
-                                if (res.isConfirmed) {
-                                    const timeslotId = res.value;
-                                    window.location.href = `reschedule_schedule.php?schedule_id=${scheduleId}&timeslot_id=${timeslotId}`;
-                                }
+                                icon: 'success',
+                                title: 'Rescheduled',
+                                text: 'The maintenance task has been successfully rescheduled.',
                             });
                         })
                         .catch(error => {
-                            console.error('Error fetching timeslots:', error);
+                            console.error('Error rescheduling task:', error);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
-                                text: 'Failed to fetch available timeslots. Please try again.',
+                                text: 'Failed to reschedule the task. Please try again.',
                             });
                         });
-                }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching timeslots:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Failed to fetch available timeslots. Please try again.',
+                });
             });
         }
-
-
+    });
+}
 
 
 
