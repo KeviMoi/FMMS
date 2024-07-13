@@ -19,8 +19,8 @@
             </div>
             <!-- Modal Body -->
             <div class="modal_container">
-                <div class="notification_container">
-                    <div class="notification-list" id="notificationList">
+                <div class="alert-message_container">
+                    <div class="alert-message-list" id="notificationList">
                         <!-- Notifications will be loaded here -->
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
                     if (data.message) {
                         const noNotificationsMessage = document.createElement('div');
-                        noNotificationsMessage.className = 'no-notifications';
+                        noNotificationsMessage.className = 'no-alert-messages';
                         noNotificationsMessage.innerHTML = `
                             <p>${data.message}</p>
                         `;
@@ -49,9 +49,9 @@
                     } else {
                         data.forEach(notification => {
                             const notificationElement = document.createElement('div');
-                            notificationElement.className = 'notification ' + (notification.is_read ? 'read' : 'unread');
+                            notificationElement.className = 'alert-message ' + (notification.is_read ? 'read' : 'unread');
                             notificationElement.innerHTML = `
-                                <p class="notification_message">${notification.notification_message}</p>
+                                <p class="alert-message_text">${notification.notification_message}</p>
                                 <span class="date">${notification.notification_date}</span>
                             `;
                             notificationElement.addEventListener('click', () => markAsRead(notification.notification_id, notificationElement));
@@ -191,7 +191,7 @@
         /* Ensure the container takes up remaining space */
     }
 
-    .notification_container {
+    .alert-message_container {
         width: 100%;
         max-width: 100%;
         margin: 2px auto;
@@ -200,11 +200,11 @@
         overflow: hidden;
     }
 
-    .notification-list {
+    .alert-message-list {
         padding: 20px;
     }
 
-    .notification {
+    .alert-message {
         background-color: #f1f1f1;
         padding: 15px;
         margin-bottom: 10px;
@@ -216,23 +216,23 @@
         transition: background-color 0.3s, color 0.3s;
     }
 
-    .notification.read {
+    .alert-message.read {
         background-color: #e0e0e0;
         border-left-color: #ccc;
     }
 
-    .notification .notification_message {
+    .alert-message .alert-message_text {
         margin: 0;
         font-size: 16px;
         color: #333;
     }
 
-    .notification .date {
+    .alert-message .date {
         font-size: 14px;
         color: #666;
     }
 
-    .no-notifications {
+    .no-alert-messages {
         background-color: #f1f1f1;
         padding: 15px;
         border-radius: 5px;
@@ -241,16 +241,16 @@
     }
 
     /* Hover effect for notifications */
-    .notification:hover {
+    .alert-message:hover {
         background-color: #d1e7ff;
         color: #0056b3;
     }
 
-    .notification:hover .notification_message {
+    .alert-message:hover .alert-message_text {
         color: #0056b3;
     }
 
-    .notification:hover .date {
+    .alert-message:hover .date {
         color: #0056b3;
     }
 

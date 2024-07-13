@@ -454,3 +454,192 @@
 [2024-07-10 10:02:53] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
 [2024-07-10 10:05:16] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
 [2024-07-10 10:05:20] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-10 18:46:30] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-10 20:41:43] [SUCCESS] [::1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-12.
+[2024-07-10 20:46:48] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-10 20:47:06] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 07:42:44] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-11 07:43:01] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 07:53:13] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 08:17:04] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 12 rescheduled successfully.
+[2024-07-11 08:18:55] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 12 rescheduled successfully.
+[2024-07-11 08:32:45] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 12 rescheduled successfully.
+[2024-07-11 08:34:15] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 12 rescheduled successfully.
+[2024-07-11 08:34:43] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 12 rescheduled successfully.
+[2024-07-11 09:11:17] [ERROR] [::1] [User: Unknown] Error: Task name '' not found.
+[2024-07-11 09:11:44] [ERROR] [::1] [User: Unknown] Error: Task name '' not found.
+[2024-07-11 09:12:34] [ERROR] [::1] [User: Unknown] Error: Task name '' not found.
+[2024-07-11 09:14:39] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 09:15:02] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 12 rescheduled successfully.
+[2024-07-11 09:15:17] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 09:15:43] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 09:23:59] [SUCCESS] [::1] [User: Unknown] Maintenance schedule with ID: 12 cancelled successfully.
+[2024-07-11 09:25:02] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 09:25:34] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 09:25:59] [SUCCESS] [::1] [User: Unknown] Maintenance task with schedule ID: 9 rescheduled successfully.
+[2024-07-11 09:26:47] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-11 09:26:51] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 09:57:10] [FAILURE] [::1] [User: Marshall_W] Incorrect password entered.
+[2024-07-11 09:57:14] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 09:57:48] [SUCCESS] [::1] [User: kevimoi] User successfully added: Username - JD, Email - kemoi.kev@gmail.com
+[2024-07-11 09:58:20] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-11 09:58:29] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 09:58:51] [ERROR] [::1] [User: JD] Failed to change password: New password and confirm password do not match.
+[2024-07-11 09:59:17] [SUCCESS] [::1] [User: JD] Password successfully changed.
+[2024-07-11 09:59:19] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 09:59:36] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:08:22] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 10:08:26] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-11 10:09:05] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-11 10:09:11] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 10:09:16] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-11 10:09:26] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:13:25] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 10:13:47] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 10:14:34] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-11 10:14:41] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-11 10:14:50] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-11 10:14:54] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:15:56] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 10:16:13] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:17:45] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 10:18:02] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:20:06] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:26:28] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:26:36] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 10:26:40] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-11 10:28:04] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-11 10:28:09] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 10:28:34] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 10:28:39] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 14:18:56] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 14:19:00] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-11 14:19:04] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 14:24:25] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 15:35:16] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 15:45:15] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-11 16:37:57] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-11 16:38:00] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 16:43:23] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-11 16:43:53] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-11 17:42:33] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-11 17:43:00] [SUCCESS] [::1] [User: kevimoi] User logged in successfully.
+[2024-07-11 17:47:20] [SUCCESS] [::1] [User: kevimoi] User logged out successfully.
+[2024-07-11 17:47:23] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 07:51:27] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 07:51:51] [SUCCESS] [::1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 07:51:57] [SUCCESS] [::1] [User: JD] User logged in successfully.
+[2024-07-12 07:52:51] [SUCCESS] [::1] [User: JD] User logged out successfully.
+[2024-07-12 08:43:42] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 08:44:14] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 09:16:35] [ERROR] [::1] [User: Marshall_W] Breakdown request addition failed due to validation errors.
+[2024-07-12 09:34:55] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 09:36:19] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 09:43:09] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 09:44:30] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 09:49:08] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 09:53:32] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 09:54:05] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 09:55:59] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 09:56:32] [SUCCESS] [127.0.0.1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 10:00:52] [SUCCESS] [::1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 10:01:01] [SUCCESS] [::1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 11:05:37] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 11:05:55] [SUCCESS] [127.0.0.1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 11:13:31] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 11:13:45] [SUCCESS] [127.0.0.1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 11:22:08] [SUCCESS] [127.0.0.1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 11:31:30] [SUCCESS] [127.0.0.1] [User: Marshall_W] Breakdown request successfully added.
+[2024-07-12 11:37:07] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 11:38:18] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 11:38:23] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 11:38:47] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 11:39:01] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 11:39:04] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 12:08:09] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 12:08:13] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 12:10:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 12:10:43] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 12:13:41] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 12:13:46] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 13:06:56] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 13:07:01] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 13:08:12] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 13:08:16] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 13:11:05] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 13:11:12] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 13:24:13] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 13:24:16] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 13:28:48] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 13:28:51] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 13:28:55] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 13:29:05] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 13:31:50] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 13:31:55] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 13:32:06] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 13:32:10] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 13:32:23] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 13:32:26] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 13:34:58] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 13:35:02] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 13:35:09] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 13:35:13] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 13:35:21] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 13:35:24] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 14:58:15] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 14:58:19] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 15:02:21] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-17.
+[2024-07-12 15:20:43] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-13.
+[2024-07-12 15:27:14] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-13.
+[2024-07-12 17:49:03] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-17.
+[2024-07-12 17:52:53] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-17.
+[2024-07-12 18:06:49] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 3, task: Oil Change, date: 2024-07-18.
+[2024-07-12 18:12:28] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 18:12:39] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 18:14:26] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 18:14:36] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 18:21:40] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 18:21:45] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 20:03:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 20:03:23] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 20:07:08] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 20:07:11] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 20:07:18] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 20:07:22] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 20:13:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 20:13:41] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 20:13:50] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 20:14:01] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 20:20:07] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 20:20:14] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 20:20:21] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 20:20:26] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 20:23:03] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 20:23:08] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 20:23:31] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 20:23:35] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 20:37:13] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 20:37:18] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 20:37:25] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 20:37:29] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 20:42:29] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 20:42:58] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 21:06:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 21:06:43] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-12 21:06:50] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-12 21:06:56] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-12 21:07:20] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-12 21:07:24] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-12 21:12:52] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-12 21:12:59] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 10:50:17] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 10:58:25] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-13 10:58:30] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-13 11:05:33] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-13 11:05:37] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-13 11:09:14] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-13 11:09:18] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 11:22:48] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-13 11:22:52] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-13 11:24:24] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-13 11:24:27] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.

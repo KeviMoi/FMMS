@@ -24,7 +24,7 @@ $first_name = explode(' ', trim($full_name))[0];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/dashboard_styles.css" />
+    <link rel="stylesheet" href="assets/css/fleet_manager_dashboard_styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Fleet Manager</title>
 </head>
@@ -47,7 +47,7 @@ $first_name = explode(' ', trim($full_name))[0];
                     <span class="material-icons-sharp"> dashboard </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="fleet_manager_schedules">
                     <span class="material-icons-sharp"> schedule </span>
                     <h3>Schedules</h3>
                 </a>
@@ -84,20 +84,22 @@ $first_name = explode(' ', trim($full_name))[0];
                     </div>
                 </div>
 
-                <a href="#">
+                <a href="#" id="fleet_manager_view_service_history">
                     <span class="material-icons-sharp"> receipt_long </span>
                     <h3>Service History</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="breakdown_requests">
                     <span class="material-icons-sharp"> report_gmailerrorred </span>
                     <h3>Breakdowns</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp"> mail_outline </span>
-                    <h3>Messages</h3>
-                    <span class="message-count">27</span>
+                <a href="#" id="view_notifications">
+                    <span class="material-icons-sharp">
+                        notifications
+                    </span>
+                    <h3>Notifications</h3>
+                    <span class="message-count" id="unreadCount">0</span>
                 </a>
-                <a href="#" id="changePassword">
+                <a href="#" id="fleet_manager_change_password">
                     <span class="material-icons-sharp"> password </span>
                     <h3>Change Password</h3>
                 </a>
@@ -121,7 +123,7 @@ $first_name = explode(' ', trim($full_name))[0];
                     <div class="status">
                         <div class="info">
                             <h3>Active Vehicles</h3>
-                            <h1>201</h1>
+                            <h1></h1>
                         </div>
                         <div class="progresss">
                             <svg>
@@ -136,15 +138,15 @@ $first_name = explode(' ', trim($full_name))[0];
                 <div class="card-2">
                     <div class="status">
                         <div class="info">
-                            <h3>Pending Schedules</h3>
-                            <h1>030</h1>
+                            <h3>Pending Breakdown Requests</h3>
+                            <h1></h1>
                         </div>
                         <div class="progresss">
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
                             <div class="percentage">
-                                <h2><b>48%</b></h2>
+                                <h2><b>030</b></h2>
                             </div>
                         </div>
                     </div>
@@ -152,15 +154,15 @@ $first_name = explode(' ', trim($full_name))[0];
                 <div class="card-3">
                     <div class="status">
                         <div class="info">
-                            <h3>Pending Breakdowns</h3>
-                            <h1>001</h1>
+                            <h3>Pending Schedules</h3>
+                            <h1></h1>
                         </div>
                         <div class="progresss">
                             <svg>
                                 <circle cx="38" cy="38" r="36"></circle>
                             </svg>
                             <div class="percentage">
-                                <h2><b>21%</b></h2>
+                                <h2><b>021</b></h2>
                             </div>
                         </div>
                     </div>
@@ -170,7 +172,7 @@ $first_name = explode(' ', trim($full_name))[0];
 
             <!-- Recent Orders Table -->
             <div class="schedules">
-                <h2>Maintenance Schedules</h2>
+                <h2>Upcoming Schedules</h2>
                 <table>
                     <thead>
                         <tr>
@@ -219,42 +221,44 @@ $first_name = explode(' ', trim($full_name))[0];
 
             <div class="reminders">
                 <div class="header">
-                    <h2>Reminders</h2>
+                    <h2>Recent Breakdowns </h2>
                     <span class="material-icons-sharp"> notifications_none </span>
                 </div>
 
                 <div class="notification">
                     <div class="icon">
-                        <span class="material-icons-sharp"> volume_up </span>
+                        <span class="material-icons-sharp">
+                            notifications_active
+                        </span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Service</h3>
-                            <small class="text_muted"> 08:00 AM - 12:00 PM </small>
+                            <small class="text_muted">
+                                12/07/2024 at 08:00 AM - 12:00 PM
+                            </small>
                         </div>
-                        <span class="material-icons-sharp"> more_vert </span>
+
                     </div>
                 </div>
-
                 <div class="notification deactive">
                     <div class="icon">
-                        <span class="material-icons-sharp"> edit </span>
+                        <span class="material-icons-sharp">
+                            notifications_active
+                        </span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Tire Change</h3>
-                            <small class="text_muted"> 08:00 AM - 12:00 PM </small>
+                            <small class="text_muted">
+                            12/07/2024 at 08:00 AM - 12:00 PM
+                            </small>
                         </div>
-                        <span class="material-icons-sharp"> more_vert </span>
+
                     </div>
                 </div>
 
-                <div class="notification add-reminder">
-                    <div>
-                        <span class="material-icons-sharp"> add </span>
-                        <h3>Add Reminder</h3>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div id="modalPlaceholder"></div>
@@ -264,6 +268,7 @@ $first_name = explode(' ', trim($full_name))[0];
     <script src="assets/js/dummy_table.js"></script>
     <script src="assets/js/dashboard_script.js"></script>
     <script src="assets/js/modal_loader_script.js"></script>
+    <script src="assets/js/unread_notifications.js"></script>
 </body>
 
 </html>

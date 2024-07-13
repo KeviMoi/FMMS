@@ -66,7 +66,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/dashboard_styles.css" />
+    <link rel="stylesheet" href="assets/css/driver_dashboard_styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Driver</title>
 </head>
@@ -107,36 +107,29 @@ $conn->close();
                     </span>
                     <h3>My Schedules</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="request_breakdown_assist">
                     <span class="material-icons-sharp">
                         report_gmailerrorred
                     </span>
                     <h3>Breakdown Assist</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="view_vehicle_service_history">
                     <span class="material-icons-sharp">
                         receipt_long
                     </span>
                     <h3>Service History</h3>
                 </a>
-                <a href="#">
+
+                <a href="#" id="view_notifications">
                     <span class="material-icons-sharp">
-                        local_shipping
+                        notifications
                     </span>
-                    <h3>Vehicle Details</h3>
+                    <h3>Notifications</h3>
+                    <span class="message-count" id="unreadCount">0</span>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        mail_outline
-                    </span>
-                    <h3>Messages</h3>
-                    <span class="message-count">27</span>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        settings
-                    </span>
-                    <h3>Settings</h3>
+                <a href="#" id="driver_change_password">
+                    <span class="material-icons-sharp"> password </span>
+                    <h3>Change Password</h3>
                 </a>
                 <div class="logout-container">
                     <a href="logout.php">
@@ -262,7 +255,7 @@ $conn->close();
 
             <div class="reminders">
                 <div class="header">
-                    <h2>Reminders</h2>
+                    <h2>Upcoming</h2>
                     <span class="material-icons-sharp">
                         notifications_none
                     </span>
@@ -271,49 +264,37 @@ $conn->close();
                 <div class="notification">
                     <div class="icon">
                         <span class="material-icons-sharp">
-                            volume_up
+                            notifications_active
                         </span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Service</h3>
                             <small class="text_muted">
-                                08:00 AM - 12:00 PM
+                                12/07/2024 at 08:00 AM - 12:00 PM
                             </small>
                         </div>
-                        <span class="material-icons-sharp">
-                            more_vert
-                        </span>
+
                     </div>
                 </div>
-
                 <div class="notification deactive">
                     <div class="icon">
                         <span class="material-icons-sharp">
-                            edit
+                            notifications_active
                         </span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Tire Change</h3>
                             <small class="text_muted">
-                                08:00 AM - 12:00 PM
+                            12/07/2024 at 08:00 AM - 12:00 PM
                             </small>
                         </div>
-                        <span class="material-icons-sharp">
-                            more_vert
-                        </span>
+
                     </div>
                 </div>
 
-                <div class="notification add-reminder">
-                    <div>
-                        <span class="material-icons-sharp">
-                            add
-                        </span>
-                        <h3>Add Reminder</h3>
-                    </div>
-                </div>
+
 
             </div>
 
@@ -322,7 +303,8 @@ $conn->close();
     </div>
     <script src="assets/js/dummy_table.js"></script>
     <script src="assets/js/dashboard_script.js"></script>
-    <script src="assets/js/modal_loader_script.js"></script>
+    <script src="assets/js/modal_loader_script.js"></script> 
+    <script src="assets/js/unread_notifications.js"></script>
 </body>
 
 </html>

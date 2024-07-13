@@ -3,13 +3,18 @@
 session_start();
 
 // Check if the user is logged in, if not redirect to login page
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['full_name'])) {
     header("Location: index.php");
     exit;
 }
 
-// Retrieve the username from the session
+// Retrieve the username and full name from the session
 $username = $_SESSION['username'];
+$full_name = $_SESSION['full_name'];
+$user_id = $_SESSION['user_id'];
+
+// Extract the first name from the full name
+$first_name = explode(' ', trim($full_name))[0];
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +24,7 @@ $username = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/dashboard_styles.css" />
+    <link rel="stylesheet" href="assets/css/mechanic_dashboard_styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Mechanic</title>
 </head>
@@ -46,42 +51,34 @@ $username = $_SESSION['username'];
                     </span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="mechanic_schedules">
                     <span class="material-icons-sharp">
-                        schedule
-                    </span>
-                    <h3>Schedules</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        add
+                        local_shipping
                     </span>
                     <h3>Admit Vehicle</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="checkout_vehicle_view">
                     <span class="material-icons-sharp">
-                        task_alt
+                        no_crash
                     </span>
                     <h3>Check Out Vehicle</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="mechanic_view_service_history">
                     <span class="material-icons-sharp">
                         receipt_long
                     </span>
                     <h3>Service History</h3>
                 </a>
-                <a href="#">
+                <a href="#" id="view_notifications">
                     <span class="material-icons-sharp">
-                        mail_outline
+                        notifications
                     </span>
-                    <h3>Messages</h3>
-                    <span class="message-count">27</span>
+                    <h3>Notifications</h3>
+                    <span class="message-count" id="unreadCount">0</span>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        settings
-                    </span>
-                    <h3>Settings</h3>
+                <a href="#" id="mechanic_change_password">
+                    <span class="material-icons-sharp"> password </span>
+                    <h3>Change Password</h3>
                 </a>
 
                 <div class="logout-container">
@@ -190,7 +187,7 @@ $username = $_SESSION['username'];
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b><?php echo htmlspecialchars($username); ?></b></p>
+                        <p>Hey, <b><?php echo htmlspecialchars($first_name); ?></b></p>
                         <small class="text-muted">Mechanic</small>
                     </div>
                 </div>
@@ -208,7 +205,7 @@ $username = $_SESSION['username'];
 
             <div class="reminders">
                 <div class="header">
-                    <h2>Reminders</h2>
+                    <h2>Upcoming</h2>
                     <span class="material-icons-sharp">
                         notifications_none
                     </span>
@@ -217,55 +214,45 @@ $username = $_SESSION['username'];
                 <div class="notification">
                     <div class="icon">
                         <span class="material-icons-sharp">
-                            volume_up
+                            notifications_active
                         </span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Service</h3>
                             <small class="text_muted">
-                                08:00 AM - 12:00 PM
+                                12/07/2024 at 08:00 AM - 12:00 PM
                             </small>
                         </div>
-                        <span class="material-icons-sharp">
-                            more_vert
-                        </span>
+
                     </div>
                 </div>
-
                 <div class="notification deactive">
                     <div class="icon">
                         <span class="material-icons-sharp">
-                            edit
+                            notifications_active
                         </span>
                     </div>
                     <div class="content">
                         <div class="info">
                             <h3>Tire Change</h3>
                             <small class="text_muted">
-                                08:00 AM - 12:00 PM
+                            12/07/2024 at 08:00 AM - 12:00 PM
                             </small>
                         </div>
-                        <span class="material-icons-sharp">
-                            more_vert
-                        </span>
+
                     </div>
                 </div>
 
-                <div class="notification add-reminder">
-                    <div>
-                        <span class="material-icons-sharp">
-                            add
-                        </span>
-                        <h3>Add Reminder</h3>
-                    </div>
-                </div>
+                
             </div>
         </div>
+        <div id="modalPlaceholder"></div>
     </div>
-
     <script src="assets/js/dummy_table.js"></script>
     <script src="assets/js/dashboard_script.js"></script>
+    <script src="assets/js/modal_loader_script.js"></script>
+    <script src="assets/js/unread_notifications.js"></script>
 </body>
 
 </html>

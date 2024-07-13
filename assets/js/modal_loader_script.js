@@ -36,13 +36,23 @@ $(document).ready(function() {
 
     // Function calls
     setupDynamicModal('addUser', 'create_new_user_form.php');
-    setupDynamicModal('changePassword', 'change_password.php');
+    setupDynamicModal('fleet_manager_change_password', 'change_password.php');
+    setupDynamicModal('driver_change_password', 'change_password.php');
+    setupDynamicModal('mechanic_change_password', 'change_password.php');
     setupDynamicModal('viewUsers', 'users.php');
     setupDynamicModal('addVehicle', 'add_vehicle.php');
     setupDynamicModal('viewVehicles', 'vehicles.php');
     setupDynamicModal('schedule_maintenance', 'book_schedule.php');
     setupDynamicModal('driver_schedules', 'driver_schedules.php');
+    setupDynamicModal('fleet_manager_schedules', 'fleet_manager_schedules_view.php');
+    setupDynamicModal('mechanic_schedules', 'mechanic_schedules.php');
+    setupDynamicModal('checkout_vehicle_view', 'checkout_vehicle_view.php'); 
+    setupDynamicModal('mechanic_view_service_history', 'view_service_history.php');
+    setupDynamicModal('fleet_manager_view_service_history', 'view_service_history.php');
+    setupDynamicModal('view_vehicle_service_history', 'view_vehicle_service_history.php');
+    setupDynamicModal('request_breakdown_assist', 'request_breakdown_assist.php');
+    setupDynamicModal('breakdown_requests', 'breakdown_requests.php');
+    setupDynamicModal('view_notifications', 'view_notifications.php');
 
-    
-    // Add more calls to as needed for other elements and files
+    // Add more calls to as needed for other elements and files 
 });

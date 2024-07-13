@@ -1,8 +1,10 @@
 <?php
 session_start();
 require_once 'db_config/db_conn.php';
+require_once 'notification.php';
+require_once 'logger.php';
 
-if(!isset($_SESSION['vehicle_id'])) {
+if (!isset($_SESSION['vehicle_id'])) {
     die("Vehicle ID not set in session.");
 }
 
@@ -32,8 +34,13 @@ $stmt->bind_param('iiissss', $vehicle_id, $task_id, $service_center_id, $date, $
 $stmt->execute();
 
 if ($stmt->affected_rows > 0) {
-    echo "Maintenance schedule booked successfully.";
+    $notification = "Maintenance for  your vehicle  has been successfully booked. Task: $task. Date: $date. Time: $start_time - $end_time.";
+    notify($_SESSION['user_id'], $notification);
+    
+    $message = "Maintenance schedule booked successfully for vehicle ID: $vehicle_id, task: $task, date: $date.";
+    logActivity($message, 'SUCCESS', $_SESSION['username'] ?? 'Unknown');
 } else {
     echo "Failed to book maintenance schedule.";
+    $message = "Failed to book maintenance schedule for vehicle ID: $vehicle_id, task: $task, date: $date.";
+    logActivity($message, 'ERROR', $_SESSION['username'] ?? 'Unknown');
 }
-?>
