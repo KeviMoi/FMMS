@@ -53,6 +53,6 @@ $(document).ready(function() {
     setupDynamicModal('request_breakdown_assist', 'request_breakdown_assist.php');
     setupDynamicModal('breakdown_requests', 'breakdown_requests.php');
     setupDynamicModal('view_notifications', 'view_notifications.php');
-
+    setupDynamicModal('vehicle_card', 'vehicle_card.php');
     // Add more calls to as needed for other elements and files 
 });

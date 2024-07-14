@@ -35,10 +35,5 @@ const Orders = [
         Time: '2024-04-28 15:30:00',
         status: 'Active'
     },
-    {
-        Registration_Number: 'KAK 697Q',
-        Maintenance_Type: 'Body Work',
-        Time: '2024-04-28 15:30:00',
-        status: 'in servirce'
-    },
+    
 ]

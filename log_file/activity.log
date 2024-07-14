@@ -643,3 +643,32 @@
 [2024-07-13 11:22:52] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
 [2024-07-13 11:24:24] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
 [2024-07-13 11:24:27] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-13 11:27:50] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-13 11:27:57] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 11:38:07] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 11:45:57] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 13:43:31] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-13 13:43:37] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-13 13:43:47] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-13 13:43:54] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-13 13:50:00] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-13 13:50:10] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-13 16:18:39] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-13 16:18:42] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-14 16:42:25] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-14 16:42:55] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-14 16:46:13] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-14 16:46:16] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-14 16:46:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-14 16:48:55] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-07-14 16:49:30] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-07-14 16:50:40] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-07-14 16:50:51] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-14 17:02:58] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-14 17:17:17] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-14 17:22:31] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-14 17:54:57] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-07-14 19:10:49] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-07-14 19:11:00] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-07-14 19:16:02] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-07-14 19:16:06] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.

@@ -53,6 +53,37 @@ if ($vehicle) {
 }
 
 $_SESSION['vehicle_id'] = $vehicle_id;
+
+// Query to get the 10 most recent service history records for the vehicle
+$sql = "SELECT mt.task_name, sh.service_date, sh.odometer_reading 
+        FROM service_history sh 
+        JOIN maintenance_tasks mt ON sh.task_id = mt.task_id 
+        WHERE sh.vehicle_id = ? 
+        ORDER BY sh.service_date DESC 
+        LIMIT 10";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $vehicle_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the service history records
+$service_history = $result->fetch_all(MYSQLI_ASSOC);
+
+// Query to get the 2 earliest upcoming maintenance schedules for the vehicle
+$sql = "SELECT mt.task_name, ms.schedule_date, ms.schedule_start_time, ms.schedule_end_time 
+        FROM maintenance_schedule ms 
+        JOIN maintenance_tasks mt ON ms.task_id = mt.task_id 
+        WHERE ms.vehicle_id = ? AND ms.status = 'Scheduled' 
+        ORDER BY ms.schedule_date ASC, ms.schedule_start_time ASC 
+        LIMIT 2";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $vehicle_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the upcoming maintenance schedules
+$upcoming_schedules = $result->fetch_all(MYSQLI_ASSOC);
+
 // Close the statement and connection
 $stmt->close();
 $conn->close();
@@ -94,6 +125,12 @@ $conn->close();
                         dashboard
                     </span>
                     <h3>Dashboard</h3>
+                </a>
+                <a href="#" id="vehicle_card">
+                    <span class="material-icons-sharp">
+                        local_shipping
+                    </span>
+                    <h3>Vehicle Info</h3>
                 </a>
                 <a href="#" id="schedule_maintenance">
                     <span class="material-icons-sharp">
@@ -144,73 +181,26 @@ $conn->close();
         <!--  Main Content  -->
         <main>
             <h1>Driver Dashboard</h1>
-            <!--  Analyses  -->
-            <div class="analyse">
-                <div class="card-1">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Vehicle Info</h3>
-                            <h1>201</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <h2><b>81%</b></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-2">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Last Maintenance</h3>
-                            <h1>030</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <h2><b>48%</b></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-3">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Garage Visits</h3>
-                            <h1>001</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <h2><b>21%</b></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--  End of Analyses  -->
-
-            <!-- Recent Orders Table -->
+            <!-- Recent Maintenance History Table -->
             <div class="schedules">
-                <h2>Recent Maintenance Services</h2>
+                <h2>Recent Service History</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Registration Number</th>
-                            <th>Maintenance Type</th>
-                            <th>Time</th>
-                            <th>Status</th>
-                            <th></th>
+                            <th>Task</th>
+                            <th>Date</th>
+                            <th>Odometer Reading</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <?php foreach ($service_history as $history) : ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($history['task_name']); ?></td>
+                                <td><?php echo htmlspecialchars($history['service_date']); ?></td>
+                                <td><?php echo htmlspecialchars($history['odometer_reading']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
                 </table>
                 <a href="#">Show All</a>
             </div>
@@ -261,41 +251,45 @@ $conn->close();
                     </span>
                 </div>
 
-                <div class="notification">
-                    <div class="icon">
-                        <span class="material-icons-sharp">
-                            notifications_active
-                        </span>
-                    </div>
-                    <div class="content">
-                        <div class="info">
-                            <h3>Service</h3>
-                            <small class="text_muted">
-                                12/07/2024 at 08:00 AM - 12:00 PM
-                            </small>
+                <?php if (count($upcoming_schedules) > 0) : ?>
+                    <?php foreach ($upcoming_schedules as $index => $schedule) : ?>
+                        <div class="notification <?php echo $index === 1 ? 'deactive' : ''; ?>">
+                            <div class="icon">
+                                <span class="material-icons-sharp">
+                                    notifications_active
+                                </span>
+                            </div>
+                            <div class="content">
+                                <div class="info">
+                                    <h3><?php echo htmlspecialchars($schedule['task_name']); ?></h3>
+                                    <small class="text_muted">
+                                        <?php
+                                        echo htmlspecialchars($schedule['schedule_date']) . ' at ' .
+                                            htmlspecialchars($schedule['schedule_start_time']) . ' - ' .
+                                            htmlspecialchars($schedule['schedule_end_time']);
+                                        ?>
+                                    </small>
+                                </div>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="notification deactive">
-                    <div class="icon">
-                        <span class="material-icons-sharp">
-                            notifications_active
-                        </span>
-                    </div>
-                    <div class="content">
-                        <div class="info">
-                            <h3>Tire Change</h3>
-                            <small class="text_muted">
-                            12/07/2024 at 08:00 AM - 12:00 PM
-                            </small>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <div class="notification">
+                        <div class="icon">
+                            <span class="material-icons-sharp">
+                                notifications_active
+                            </span>
                         </div>
-
+                        <div class="content">
+                            <div class="info">
+                                <h3>No Upcoming Maintenance</h3>
+                                <small class="text_muted">
+                                    No scheduled maintenance tasks
+                                </small>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-
-
+                <?php endif; ?>
             </div>
 
         </div>
@@ -303,7 +297,7 @@ $conn->close();
     </div>
     <script src="assets/js/dummy_table.js"></script>
     <script src="assets/js/dashboard_script.js"></script>
-    <script src="assets/js/modal_loader_script.js"></script> 
+    <script src="assets/js/modal_loader_script.js"></script>
     <script src="assets/js/unread_notifications.js"></script>
 </body>
 
