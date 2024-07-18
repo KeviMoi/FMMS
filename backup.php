@@ -1,270 +1,310 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is logged in, if not redirect to login page
+if (!isset($_SESSION['username']) || !isset($_SESSION['full_name'])) {
+    header("Location: index.php");
+    exit;
+}
+
+// Retrieve the username, full name, and user ID from the session
+$username = $_SESSION['username'];
+$full_name = $_SESSION['full_name'];
+$user_id = $_SESSION['user_id'];
+
+// Extract the first name from the full name
+$first_name = explode(' ', trim($full_name))[0];
+
+// Include the database connection file
+include 'db_config/db_conn.php';
+
+// Query to get the vehicle details assigned to the driver
+$sql = "SELECT * FROM vehicles WHERE assigned_driver_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the vehicle details
+$vehicle = $result->fetch_assoc();
+
+// Check if a vehicle is assigned to the driver
+if ($vehicle) {
+    $vehicle_id = $vehicle['vehicle_id'];
+    $license_plate = $vehicle['license_plate'];
+    $make = $vehicle['make'];
+    $model = $vehicle['model'];
+    $year = $vehicle['year'];
+    $vin = $vehicle['vin'];
+    $mileage = $vehicle['mileage'];
+    $fuel_type = $vehicle['fuel_type'];
+    $status = $vehicle['status'];
+} else {
+    $vehicle_id = null;
+    $license_plate = "No vehicle assigned";
+    $make = "";
+    $model = "";
+    $year = "";
+    $vin = "";
+    $mileage = "";
+    $fuel_type = "";
+    $status = "";
+}
+
+$_SESSION['vehicle_id'] = $vehicle_id;
+
+// Query to get the 10 most recent service history records for the vehicle
+$sql = "SELECT mt.task_name, sh.service_date, sh.odometer_reading 
+        FROM service_history sh 
+        JOIN maintenance_tasks mt ON sh.task_id = mt.task_id 
+        WHERE sh.vehicle_id = ? 
+        ORDER BY sh.service_date DESC 
+        LIMIT 10";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $vehicle_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the service history records
+$service_history = $result->fetch_all(MYSQLI_ASSOC);
+
+// Query to get the 2 earliest upcoming maintenance schedules for the vehicle
+$sql = "SELECT mt.task_name, ms.schedule_date, ms.schedule_start_time, ms.schedule_end_time 
+        FROM maintenance_schedule ms 
+        JOIN maintenance_tasks mt ON ms.task_id = mt.task_id 
+        WHERE ms.vehicle_id = ? AND ms.status = 'Scheduled' 
+        ORDER BY ms.schedule_date ASC, ms.schedule_start_time ASC 
+        LIMIT 2";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $vehicle_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch the upcoming maintenance schedules
+$upcoming_schedules = $result->fetch_all(MYSQLI_ASSOC);
+
+// Close the statement and connection
+$stmt->close();
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notifications</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/driver_dashboard_styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Driver</title>
 </head>
 
 <body>
-    <div id="modalDialog" class="modal" style="display: none">
-        <div class="modal-content animate-top">
-            <div class="modal-header">
-                <h5 class="modal-title">Notifications</h5>
-                <button type="button" class="close close-icon" onclick="closeModal()">
-                    <span class="material-icons-sharp">close</span>
-                </button>
-            </div>
-            <!-- Modal Body -->
-            <div class="modal_container">
-                <div class="notification_container">
-                    <div class="notification-list" id="notificationList">
-                        <!-- Notifications will be loaded here -->
-                    </div>
+
+
+    <div class="container">
+        <!--  Sidebar Section  -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="assets/images/black-logo.png" />
+                    <h2>Makvo<span class="primary">Limited</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
                 </div>
             </div>
-            <!-- End of Modal Body -->
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#" id="log_mileage">
+                    <span class="material-icons-sharp">
+                        speed
+                    </span>
+                    <h3>Log Mileage</h3>
+                </a>
+                <a href="#" id="vehicle_card">
+                    <span class="material-icons-sharp">
+                        local_shipping
+                    </span>
+                    <h3>Vehicle Info</h3>
+                </a>
+                <a href="#" id="schedule_maintenance">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>Add Schedule</h3>
+                </a>
+                <a href="#" id="driver_schedules">
+                    <span class="material-icons-sharp">
+                        schedule
+                    </span>
+                    <h3>My Schedules</h3>
+                </a>
+                <a href="#" id="request_breakdown_assist">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Breakdown Assist</h3>
+                </a>
+                <a href="#" id="view_vehicle_service_history">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>Service History</h3>
+                </a>
+
+                <a href="#" id="view_notifications">
+                    <span class="material-icons-sharp">
+                        notifications
+                    </span>
+                    <h3>Notifications</h3>
+                    <span class="message-count" id="unreadCount">0</span>
+                </a>
+                <a href="#" id="driver_change_password">
+                    <span class="material-icons-sharp"> password </span>
+                    <h3>Change Password</h3>
+                </a>
+                <div class="logout-container">
+                    <a href="logout.php">
+                        <span class="material-icons-sharp"> logout </span>
+                        <h3>Logout</h3>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <!--  End of Sidebar Section  -->
+
+        <!--  Main Content  -->
+        <main>
+            <h1>Driver Dashboard</h1>
+            <!-- Recent Maintenance History Table -->
+            <div class="schedules">
+                <h2>Recent Service History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Date</th>
+                            <th>Odometer Reading</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($service_history as $history) : ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($history['task_name']); ?></td>
+                                <td><?php echo htmlspecialchars($history['service_date']); ?></td>
+                                <td><?php echo htmlspecialchars($history['odometer_reading']); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <a href="#" id="show_all_vehicle_service_history">Show All</a>
+            </div>
+            <!-- End of Recent Orders -->
+        </main>
+        <!--  End of Main Content  -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b><?php echo htmlspecialchars($first_name); ?></b></p>
+                        <small class="text-muted">Driver</small>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="company-profile">
+                <div class="logo">
+                    <img src="assets/images/black-logo.png" />
+                    <h2>Makvo Limited</h2>
+                    <p>Confidence in Motion</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Upcoming</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <?php if (count($upcoming_schedules) > 0) : ?>
+                    <?php foreach ($upcoming_schedules as $index => $schedule) : ?>
+                        <div class="notification <?php echo $index === 1 ? 'deactive' : ''; ?>">
+                            <div class="icon">
+                                <span class="material-icons-sharp">
+                                    notifications_active
+                                </span>
+                            </div>
+                            <div class="content">
+                                <div class="info">
+                                    <h3><?php echo htmlspecialchars($schedule['task_name']); ?></h3>
+                                    <small class="text_muted">
+                                        <?php
+                                        echo htmlspecialchars($schedule['schedule_date']) . ' at ' .
+                                            htmlspecialchars($schedule['schedule_start_time']) . ' - ' .
+                                            htmlspecialchars($schedule['schedule_end_time']);
+                                        ?>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <div class="notification">
+                        <div class="icon">
+                            <span class="material-icons-sharp">
+                                notifications_active
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>No Upcoming Maintenance</h3>
+                                <small class="text_muted">
+                                    No scheduled maintenance tasks
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+
         </div>
+        <div id="modalPlaceholder"></div>
     </div>
-
-    <script>
-        fetchNotifications();
-
-        function fetchNotifications() {
-            fetch('fetch_notifications.php')
-                .then(response => response.json())
-                .then(data => {
-                    const notificationList = document.getElementById('notificationList');
-                    notificationList.innerHTML = '';
-
-                    if (data.message) {
-                        const noNotificationsMessage = document.createElement('div');
-                        noNotificationsMessage.className = 'no-notifications';
-                        noNotificationsMessage.innerHTML = `
-                            <p>${data.message}</p>
-                        `;
-                        notificationList.appendChild(noNotificationsMessage);
-                    } else {
-                        data.forEach(notification => {
-                            const notificationElement = document.createElement('div');
-                            notificationElement.className = 'notification ' + (notification.is_read ? 'read' : 'unread');
-                            notificationElement.innerHTML = `
-                                <p class="notification_message">${notification.notification_message}</p>
-                                <span class="date">${notification.notification_date}</span>
-                            `;
-                            notificationElement.addEventListener('click', () => markAsRead(notification.notification_id, notificationElement));
-
-                            notificationList.appendChild(notificationElement);
-                        });
-                    }
-                })
-                .catch(error => console.error('Error fetching notifications:', error));
-        }
-
-        function markAsRead(notification_id, notificationElement) {
-            fetch('mark_as_read.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    notification_id: notification_id
-                })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        notificationElement.classList.remove('unread');
-                        notificationElement.classList.add('read');
-                    } else {
-                        console.error('Failed to mark notification as read:', data.message);
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        function closeModal() {
-            document.getElementById('modalDialog').style.display = 'none';
-        }
-    </script>
+    <script src="assets/js/dummy_table.js"></script>
+    <script src="assets/js/dashboard_script.js"></script>
+    <script src="assets/js/modal_loader_script.js"></script>
+    <script src="assets/js/unread_notifications.js"></script>
 </body>
 
 </html>
-
-<!-- CSS -->
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-    }
-
-    .animate-top {
-        position: relative;
-        animation: animatetop 0.4s;
-    }
-
-    @keyframes animatetop {
-        from {
-            top: -300px;
-            opacity: 0;
-        }
-
-        to {
-            top: 0;
-            opacity: 1;
-        }
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        /* Semi-transparent background */
-        backdrop-filter: blur(5px);
-        /* Apply blur effect */
-    }
-
-    .modal-content {
-        margin: 8% auto;
-        border: 1px solid #888;
-        max-width: 700px;
-        background-color: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        outline: 0;
-        max-height: 80%;
-        /* Ensure modal height doesn't exceed the viewport */
-        display: flex;
-        flex-direction: column;
-    }
-
-    .modal-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        border-bottom: 1px solid #e9ecef;
-        border-top-left-radius: 0.3rem;
-        border-top-right-radius: 0.3rem;
-        position: sticky;
-        top: 0;
-        background-color: #fff;
-        z-index: 10;
-    }
-
-    .modal-title {
-        margin-bottom: 0;
-        line-height: 1.5;
-        margin-top: 0;
-        font-size: 1.25rem;
-        color: #666;
-    }
-
-    .close {
-        float: right;
-        font-size: 1.5rem;
-        font-weight: 700;
-        line-height: 1;
-        color: #000;
-        text-shadow: 0 1px 0 #fff;
-        opacity: 0.5;
-        cursor: pointer;
-        background-color: transparent;
-        border: 0;
-    }
-
-    .modal_container {
-        padding: 5px;
-        overflow-y: auto;
-        flex-grow: 1;
-        /* Ensure the container takes up remaining space */
-    }
-
-    .notification_container {
-        width: 100%;
-        max-width: 100%;
-        margin: 2px auto;
-        background-color: #fff;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    .notification-list {
-        padding: 20px;
-    }
-
-    .notification {
-        background-color: #f1f1f1;
-        padding: 15px;
-        margin-bottom: 10px;
-        border-left: 5px solid #6c9bcf;
-        border-radius: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .notification.read {
-        background-color: #e0e0e0;
-        border-left-color: #ccc;
-    }
-
-    .notification .notification_message {
-        margin: 0;
-        font-size: 16px;
-        color: #333;
-    }
-
-    .notification .date {
-        font-size: 14px;
-        color: #666;
-    }
-
-    .no-notifications {
-        background-color: #f1f1f1;
-        padding: 15px;
-        border-radius: 5px;
-        text-align: center;
-        color: #666;
-    }
-
-    /* Hover effect for notifications */
-    .notification:hover {
-        background-color: #d1e7ff;
-        color: #0056b3;
-    }
-
-    .notification:hover .notification_message {
-        color: #0056b3;
-    }
-
-    .notification:hover .date {
-        color: #0056b3;
-    }
-
-    ::-webkit-scrollbar {
-        height: 5px;
-        width: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-</style>
-<!-- End of CSS -->

@@ -253,7 +253,7 @@ $recentBreakdowns = $recentBreakdownsResult->fetch_all(MYSQLI_ASSOC);
                         ?>
                     </tbody>
                 </table>
-                <a href="#">Show All</a>
+                <a href="#" id="show_all_schedules">Show All</a>
             </div>
             <!-- End of Recent Orders -->
         </main>

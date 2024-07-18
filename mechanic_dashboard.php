@@ -295,7 +295,7 @@ $conn->close();
                         <?php endif; ?>
                     </tbody>
                 </table>
-                <a href="#">Show All</a>
+                <a href="#" id="show_all_mechanic_schedules">Show All</a>
             </div>
             <!-- End of Recent Orders -->
         </main>

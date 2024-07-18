@@ -54,5 +54,8 @@ $(document).ready(function() {
     setupDynamicModal('breakdown_requests', 'breakdown_requests.php');
     setupDynamicModal('view_notifications', 'view_notifications.php');
     setupDynamicModal('vehicle_card', 'vehicle_card.php');
-    // Add more calls to as needed for other elements and files 
+    setupDynamicModal('show_all_vehicle_service_history', 'view_vehicle_service_history.php');
+    setupDynamicModal('show_all_schedules', 'fleet_manager_schedules_view.php');
+    setupDynamicModal('show_all_mechanic_schedules', 'mechanic_schedules.php'); log_mileage.php
+    setupDynamicModal('log_mileage', 'log_mileage.php');
 });

@@ -18,6 +18,7 @@ $first_name = explode(' ', trim($full_name))[0];
 
 // Include the database connection file
 include 'db_config/db_conn.php';
+include 'notification.php';
 
 // Query to get the vehicle details assigned to the driver
 $sql = "SELECT * FROM vehicles WHERE assigned_driver_id = ?";
@@ -84,10 +85,45 @@ $result = $stmt->get_result();
 // Fetch the upcoming maintenance schedules
 $upcoming_schedules = $result->fetch_all(MYSQLI_ASSOC);
 
+// Check for upcoming regular maintenance
+$sql = "SELECT sh.odometer_reading
+        FROM service_history sh
+        JOIN maintenance_tasks mt ON sh.task_id = mt.task_id
+        WHERE sh.vehicle_id = ? AND mt.task_name = 'Regular Maintenance'
+        ORDER BY sh.service_date DESC 
+        LIMIT 1";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $vehicle_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$last_maintenance = $result->fetch_assoc();
+$last_odometer_reading = $last_maintenance['odometer_reading'] ?? 0;
+
+// If mileage - last_odometer_reading is less than or equal to a threshold (e.g., 1000 miles), notify the driver
+$threshold = 1000;
+if ($mileage - $last_odometer_reading <= $threshold) {
+    // Check if a notification has already been sent today
+    $today = date('Y-m-d');
+    $message = "Regular maintenance is almost due for vehicle with license plate: $license_plate";
+    $sql = "SELECT COUNT(*) as count
+            FROM notifications
+            WHERE user_id = ? AND notification_message = ? AND DATE(notification_date) = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iss", $user_id, $message, $today);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $count = $result->fetch_assoc()['count'];
+
+    if ($count == 0) {
+        notify($user_id, $message);
+    }
+}
+
 // Close the statement and connection
 $stmt->close();
 $conn->close();
 ?>
+
 
 
 <!DOCTYPE html>
@@ -125,6 +161,12 @@ $conn->close();
                         dashboard
                     </span>
                     <h3>Dashboard</h3>
+                </a>
+                <a href="#" id="log_mileage">
+                    <span class="material-icons-sharp">
+                        speed
+                    </span>
+                    <h3>Log Mileage</h3>
                 </a>
                 <a href="#" id="vehicle_card">
                     <span class="material-icons-sharp">
@@ -202,7 +244,7 @@ $conn->close();
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <a href="#">Show All</a>
+                <a href="#" id="show_all_vehicle_service_history">Show All</a>
             </div>
             <!-- End of Recent Orders -->
         </main>

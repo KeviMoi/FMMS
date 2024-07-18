@@ -2,6 +2,7 @@
 <?php
 require 'db_config/db_conn.php';
 include 'logger.php';
+require_once 'notification.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   session_start();
@@ -55,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Success message
     logActivity("Password successfully changed.", 'SUCCESS', $username);
+    notify($userId, "Password successfully changed.");
     echo "<div class='message-box success'>Password successfully changed.</div>";
   } catch (Exception $e) {
     // Error message

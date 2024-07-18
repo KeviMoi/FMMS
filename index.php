@@ -96,6 +96,7 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,6 +106,7 @@ try {
     <link rel="stylesheet" href="assets/css/message_box.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="wrapper">
         <nav class="nav">
@@ -138,11 +140,14 @@ try {
                     </div>
                 </form>
                 <div class="forgot-password">
-                    <label><a href="#">Forgot password?</a></label>
+                    <label><a href="#" id="forgot-password-link">Forgot password?</a></label>
                 </div>
+
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const messageContainer = document.getElementById("message-container");
@@ -152,6 +157,50 @@ try {
                 }, 5000);
             }
         });
+
+        document.getElementById('forgot-password-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Forgot Password?',
+                input: 'email',
+                inputLabel: 'Enter your email address',
+                inputPlaceholder: 'Email',
+                showCancelButton: true,
+                confirmButtonText: 'Submit',
+                showLoaderOnConfirm: true,
+                preConfirm: (email) => {
+                    return fetch('forgot_password.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                email: email
+                            })
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(response.statusText)
+                            }
+                            return response.json()
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                return Swal.fire('Success!', data.message, 'success')
+                            } else {
+                                return Swal.fire('Error!', data.message, 'error')
+                            }
+                        })
+                        .catch(error => {
+                            Swal.fire('Error!', 'An error occurred. Please try again later.', 'error')
+                        });
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            });
+        });
     </script>
+
+
 </body>
+
 </html>

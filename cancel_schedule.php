@@ -1,6 +1,8 @@
 <?php
+session_start();
 include_once 'db_config/db_conn.php';
 include_once 'logger.php';
+require_once 'notification.php';
 
 if (isset($_POST['schedule_id'])) {
     $schedule_id = $_POST['schedule_id'];
@@ -12,6 +14,7 @@ if (isset($_POST['schedule_id'])) {
         $stmt->bind_param("i", $schedule_id);
         if ($stmt->execute()) {
             $message = "Maintenance schedule with ID: $schedule_id cancelled successfully.";
+            notify($_SESSION['user_id'], $message);
             logActivity($message, 'SUCCESS', $_SESSION['username'] ?? 'Unknown');
             header("Location: driver_dashboard.php");
             exit(); // Ensure script stops executing after redirect

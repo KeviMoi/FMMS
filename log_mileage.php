@@ -1,47 +1,38 @@
 <!-- PHP Code -->
-<?php 
-require("mail_script.php"); 
-include 'db_config/db_conn.php';
-require_once 'logger.php';
-require_once 'notification.php';
+<?php require("mail_script.php"); ?>
+<?php include 'db_config/db_conn.php'; ?>
 
+<?php
 session_start();
+
+include 'logger.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // Retrieve form data
-    $breakdown_description = trim($_POST["breakdown_description"]);
+    $mileage = trim($_POST["mileage"]);
 
     // Retrieve vehicle_id from session
     $vehicle_id = $_SESSION['vehicle_id'];
-    $driver_id = $_SESSION['user_id'];
 
     // Validation function
-    function validateDescription($description) {
-        return strlen($description) >= 10;
+    function validateMileage($mileage)
+    {
+        return is_numeric($mileage) && $mileage > 0;
     }
 
     // Validate form data
-    if (!validateDescription($breakdown_description)) {
-        $errors[] = "Please enter a valid breakdown description (at least 10 characters).";
+    if (!validateMileage($mileage)) {
+        $errors[] = "Please enter a valid mileage (a positive number).";
     }
 
-    // Check if GPS coordinates are available
-    if (!isset($_POST['latitude']) || !isset($_POST['longitude'])) {
-        $errors[] = "Unable to retrieve GPS coordinates.";
-    } else {
-        $latitude = $_POST['latitude'];
-        $longitude = $_POST['longitude'];
-    }
-
-    // If there are no errors, proceed with inserting the breakdown request
+    // If there are no errors, proceed with updating the mileage
     if (empty($errors)) {
         try {
-            // SQL statement to insert breakdown request
-            $stmt = $conn->prepare("INSERT INTO breakdown_requests (vehicle_id, breakdown_description, latitude, longitude, status) VALUES (?, ?, ?, ?, ?)");
-            $status = 'Pending';
-            $stmt->bind_param("issds", $vehicle_id, $breakdown_description, $latitude, $longitude, $status);
+            // SQL statement
+            $stmt = $conn->prepare("UPDATE vehicles SET mileage = ? WHERE vehicle_id = ?");
+            $stmt->bind_param("ii", $mileage, $vehicle_id);
 
             // Execute the SQL statement
             if (!$stmt->execute()) {
@@ -49,41 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Success message
-            $message = "Breakdown request successfully added.";
+            $message = "Mileage successfully Logged.";
             logActivity($message, "SUCCESS", $_SESSION['username']);
-            echo "<div class='message-box success'>Breakdown Request Successfully Added</div>";
-
-            // Send notification to the driver
-            notify($driver_id, "Your breakdown request has been successfully submitted.");
-
-            // Fetch the license plate of the vehicle
-            $vehicle_query = "SELECT license_plate FROM vehicles WHERE vehicle_id = $vehicle_id";
-            $vehicle_result = mysqli_query($conn, $vehicle_query);
-
-            if ($vehicle_result && mysqli_num_rows($vehicle_result) > 0) {
-                $vehicle_row = mysqli_fetch_assoc($vehicle_result);
-                $license_plate = $vehicle_row['license_plate'];
-
-                // Fetch all manager user IDs
-                $manager_query = "SELECT user_id FROM users WHERE role = 'manager'";
-                $manager_result = mysqli_query($conn, $manager_query);
-
-                if ($manager_result && mysqli_num_rows($manager_result) > 0) {
-                    while ($manager_row = mysqli_fetch_assoc($manager_result)) {
-                        $manager_id = $manager_row['user_id'];
-                        // Send notification to each manager
-                        notify($manager_id, "Driver has requested a breakdown assist for the vehicle with license plate $license_plate.");
-                    }
-                } else {
-                    logActivity("No managers found to notify about the breakdown request.", "WARNING", $_SESSION['username']);
-                }
-            } else {
-                logActivity("License plate not found for vehicle ID: $vehicle_id", "ERROR", $_SESSION['username']);
-            }
-
+            echo "<div class='message-box success'>Mileage Successfully Updated</div>";
         } catch (Exception $e) {
             // Error message
-            $message = "Error adding breakdown request: " . $e->getMessage();
+            $message = "Error updating mileage: " . $e->getMessage();
             logActivity($message, "ERROR", $_SESSION['username']);
             echo "<div class='message-box error'>Error: " . $e->getMessage() . "</div>";
         } finally {
@@ -98,14 +60,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($errors as $error) {
             echo "<div class='message-box error'>$error</div>";
         }
-        $message = "Breakdown request addition failed due to validation errors.";
+        $message = "Mileage update failed due to validation errors.";
         logActivity($message, "ERROR", $_SESSION['username']);
     }
 
     exit();
 }
 ?>
-
 <!-- PHP Code -->
 
 <!-- HTML Code -->
@@ -114,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Maintenance Booking</title>
+    <title>Log Mileage</title>
     <link rel="stylesheet" href="assets/css/message_box.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -122,24 +83,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="modalDialog" class="modal" style="display: block">
         <div class="modal-content animate-top">
             <div class="modal-header">
-                <h5 class="modal-title">Request Breakdown Assist</h5>
+                <h5 class="modal-title">Log Mileage</h5>
                 <button type="button" class="close close-icon">
                     <span class="material-icons-sharp">close</span>
                 </button>
             </div>
             <div class="modal_container">
                 <div id="message-container"></div>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="requestBreakdownForm">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="logMileageForm">
                     <div class="details">
                         <div class="input-box full-width">
-                            <span class="details">Breakdown Description</span>
-                            <textarea name="breakdown_description" id="breakdown_description" placeholder="Describe the breakdown" required></textarea>
+                            <span class="details">Mileage</span>
+                            <input type="number" name="mileage" id="mileage" placeholder="Enter the current mileage" required />
                         </div>
                     </div>
-                    <input type="hidden" name="latitude" id="latitude">
-                    <input type="hidden" name="longitude" id="longitude">
                     <div class="button">
-                        <input type="submit" value="Request Assist" />
+                        <input type="submit" value="Log Mileage" />
                     </div>
                 </form>
             </div>
@@ -152,12 +111,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-    document.getElementById('requestBreakdownForm').addEventListener('submit', function(event) {
+    document.getElementById('logMileageForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
         // Display the loading alert
         Swal.fire({
-            title: 'Requesting Assist...',
+            title: 'Logging Mileage...',
             text: 'Please wait while we process your request.',
             allowOutsideClick: false,
             didOpen: () => {
@@ -165,47 +124,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         });
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                document.getElementById('latitude').value = position.coords.latitude;
-                document.getElementById('longitude').value = position.coords.longitude;
+        const formData = new FormData(document.getElementById('logMileageForm'));
 
-                // Log the coordinates
-                console.log("Latitude: " + position.coords.latitude);
-                console.log("Longitude: " + position.coords.longitude);
-
-                const formData = new FormData(document.getElementById('requestBreakdownForm'));
-
-                // Proceed with form submission
-                fetch('<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('message-container').innerHTML = data;
-                        Swal.close(); // Close loading alert on success
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        document.getElementById('message-container').innerHTML = '<div class="message-box error">An error occurred. Please try again later.</div>';
-                        Swal.close(); // Close loading alert on error
-                    });
-            }, function(error) {
-                console.error('Error retrieving GPS coordinates:', error);
-                document.getElementById('message-container').innerHTML = '<div class="message-box error">Unable to retrieve GPS coordinates. Please ensure location services are enabled and try again.</div>';
+        // Proceed with form submission
+        fetch('<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('message-container').innerHTML = data;
+                Swal.close(); // Close loading alert on success
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message-container').innerHTML = '<div class="message-box error">An error occurred. Please try again later.</div>';
                 Swal.close(); // Close loading alert on error
             });
-
-        } else {
-            document.getElementById('message-container').innerHTML = '<div class="message-box error">Geolocation is not supported by this browser.</div>';
-            Swal.close();
-        }
     });
 </script>
 <!-- JS -->
 
-<!--  Css  -->
+<!-- CSS -->
 <style>
     * {
         margin: 0;
@@ -260,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     .modal-content {
         margin: 8% auto;
         border: 1px solid #888;
-        max-width: 65%;
+        max-width:40%;
         width: auto;
         background-color: #fff;
         border: 1px solid rgba(0, 0, 0, .2);
@@ -375,14 +315,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             max-width: 100%;
         }
 
-        .details {
-            max-height: 300px;
-            overflow-y: scroll;
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 459px) {
+        .input-box {
+            margin-bottom: 15px;
+            width: 100%;
         }
 
-        .input-box {
+        .button {
             width: 100%;
         }
     }
 </style>
-<!--  Css  -->
+<!-- CSS -->

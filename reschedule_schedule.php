@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once 'db_config/db_conn.php';
 require_once 'logger.php';
+require_once 'notification.php';
 
 $schedule_id = $_POST['schedule_id'];
 $service_center_id = $_POST['service_center_id'];
@@ -28,6 +30,7 @@ if ($task_result->num_rows > 0) {
     if ($stmt->execute()) {
         echo "Maintenance task rescheduled successfully.";
         $message = "Maintenance task with schedule ID: $schedule_id rescheduled successfully.";
+        notify($_SESSION['user_id'], $message);
         logActivity($message, 'SUCCESS', $_SESSION['username'] ?? 'Unknown');
     } else {
         echo "Error rescheduling maintenance task: " . $stmt->error;
