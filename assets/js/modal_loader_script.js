@@ -56,6 +56,9 @@ $(document).ready(function() {
     setupDynamicModal('vehicle_card', 'vehicle_card.php');
     setupDynamicModal('show_all_vehicle_service_history', 'view_vehicle_service_history.php');
     setupDynamicModal('show_all_schedules', 'fleet_manager_schedules_view.php');
-    setupDynamicModal('show_all_mechanic_schedules', 'mechanic_schedules.php'); log_mileage.php
-    setupDynamicModal('log_mileage', 'log_mileage.php');
+    setupDynamicModal('show_all_mechanic_schedules', 'mechanic_schedules.php');
+    setupDynamicModal('log_mileage', 'log_mileage.php'); 
+    setupDynamicModal('maintenance_tasks', 'maintenance_tasks.php'); 
+    setupDynamicModal('service_centers', 'service_centers.php');
+    setupDynamicModal('mechanic_assignments', 'mechanic_assignments.php');
 });

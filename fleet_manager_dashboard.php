@@ -153,6 +153,26 @@ $recentBreakdowns = $recentBreakdownsResult->fetch_all(MYSQLI_ASSOC);
                     <h3>Notifications</h3>
                     <span class="message-count" id="unreadCount">0</span>
                 </a>
+                <div class="menu-item">
+                    <a href="#">
+                        <span class="material-icons-sharp"> build </span>
+                        <h3>Garage Management</h3>
+                    </a>
+                    <div class="submenu">
+                        <a href="#" id="maintenance_tasks">
+                            <span class="material-icons-sharp">build</span>
+                            <h3>Maintenance Tasks</h3>
+                        </a>
+                        <a href="#" id="service_centers">
+                            <span class="material-icons-sharp"> settings </span>
+                            <h3>Service Centers</h3>
+                        </a>
+                        <a href="#" id="mechanic_assignments">
+                            <span class="material-icons-sharp"> group </span>
+                            <h3>Mechanics</h3>
+                        </a>
+                    </div>
+                </div>
                 <a href="#" id="fleet_manager_change_password">
                     <span class="material-icons-sharp"> password </span>
                     <h3>Change Password</h3>
