@@ -19,13 +19,15 @@ $(document).ready(function() {
         // Event listener for closing the modal
         $('body').on('click', '.close, .modal', function(e) {
             if ($(e.target).hasClass('modal') || $(e.target).hasClass('close')) {
-                $('#modalDialog').hide();
+                location.reload();
+                $('#modalDialog').hide();                
             }
         });
 
         // Event listener for closing the modal when clicking on the close icon inside the modal
         $('body').on('click', '.close-icon', function() {
-            $('#modalDialog').hide();
+            location.reload();
+            $('#modalDialog').hide();            
         });
 
         // Prevent modal from closing when clicking inside it

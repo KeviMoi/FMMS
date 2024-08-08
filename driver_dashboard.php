@@ -85,7 +85,7 @@ $result = $stmt->get_result();
 // Fetch the upcoming maintenance schedules
 $upcoming_schedules = $result->fetch_all(MYSQLI_ASSOC);
 
-// Check for upcoming regular maintenance
+// Check if the vehicle is almost due or overdue for a routine maintenance.
 $sql = "SELECT sh.odometer_reading
         FROM service_history sh
         JOIN maintenance_tasks mt ON sh.task_id = mt.task_id
@@ -100,11 +100,25 @@ $last_maintenance = $result->fetch_assoc();
 $last_odometer_reading = $last_maintenance['odometer_reading'] ?? 0;
 
 // If mileage - last_odometer_reading is less than or equal to a threshold (e.g., 1000 miles), notify the driver
-$threshold = 1000;
-if ($mileage - $last_odometer_reading <= $threshold) {
-    // Check if a notification has already been sent today
-    $today = date('Y-m-d');
+// Set the thresholds for notifications
+$almost_due_threshold = 1000;
+$overdue_threshold = 5000;
+
+// Ensure mileage and last odometer reading are integers
+$mileage = (int)$mileage;
+$last_odometer_reading = (int)$last_odometer_reading;
+
+// Calculate the mileage difference since the last maintenance
+$mileage_difference = $mileage - $last_odometer_reading;
+
+// Get today's date for notification logging
+$today = date('Y-m-d');
+
+// Check if the vehicle is almost due for maintenance
+if ($mileage_difference > $almost_due_threshold && $mileage_difference <= $overdue_threshold) {
     $message = "Regular maintenance is almost due for vehicle with license plate: $license_plate";
+
+    // SQL to check if a similar notification has been sent today
     $sql = "SELECT COUNT(*) as count
             FROM notifications
             WHERE user_id = ? AND notification_message = ? AND DATE(notification_date) = ?";
@@ -114,10 +128,32 @@ if ($mileage - $last_odometer_reading <= $threshold) {
     $result = $stmt->get_result();
     $count = $result->fetch_assoc()['count'];
 
+    // Send notification if none has been sent today
     if ($count == 0) {
         notify($user_id, $message);
     }
 }
+
+// Check if the vehicle is overdue for maintenance
+if ($mileage_difference > $overdue_threshold) {
+    $message = "Urgent: Vehicle with license plate $license_plate is overdue for maintenance!";
+
+    // SQL to check if a similar notification has been sent today
+    $sql = "SELECT COUNT(*) as count
+            FROM notifications
+            WHERE user_id = ? AND notification_message = ? AND DATE(notification_date) = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iss", $user_id, $message, $today);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $count = $result->fetch_assoc()['count'];
+
+    // Send notification if none has been sent today
+    if ($count == 0) {
+        notify($user_id, $message);
+    }
+}
+
 
 // Close the statement and connection
 $stmt->close();

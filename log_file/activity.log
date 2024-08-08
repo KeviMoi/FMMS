@@ -786,3 +786,333 @@
 [2024-07-19 13:03:14] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
 [2024-07-19 13:42:29] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
 [2024-07-19 13:42:46] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-07-26 20:03:42] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-05 08:33:27] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 07:59:40] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:01:41] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:05:02] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - jmwangi, Email - kemoi.devops@gmail.com
+[2024-08-06 09:05:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:05:52] [SUCCESS] [127.0.0.1] [User: jmwangi] User logged in successfully.
+[2024-08-06 09:06:10] [SUCCESS] [127.0.0.1] [User: jmwangi] Password successfully changed.
+[2024-08-06 09:06:12] [SUCCESS] [127.0.0.1] [User: jmwangi] User logged out successfully.
+[2024-08-06 09:06:32] [SUCCESS] [127.0.0.1] [User: jmwangi] User logged in successfully.
+[2024-08-06 09:07:02] [SUCCESS] [127.0.0.1] [User: jmwangi] User logged out successfully.
+[2024-08-06 09:07:07] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:07:24] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 6 updated successfully.
+[2024-08-06 09:11:54] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - mwanjiku, Email - kemoi.devops@gmail.com
+[2024-08-06 09:12:02] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:12:17] [SUCCESS] [127.0.0.1] [User: mwanjiku] User logged in successfully.
+[2024-08-06 09:12:40] [SUCCESS] [127.0.0.1] [User: mwanjiku] Password successfully changed.
+[2024-08-06 09:12:42] [SUCCESS] [127.0.0.1] [User: mwanjiku] User logged out successfully.
+[2024-08-06 09:12:50] [SUCCESS] [127.0.0.1] [User: mwanjiku] User logged in successfully.
+[2024-08-06 09:12:56] [SUCCESS] [127.0.0.1] [User: mwanjiku] User logged out successfully.
+[2024-08-06 09:13:01] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:13:16] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 7 updated successfully.
+[2024-08-06 09:15:39] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - jotieno, Email - kemoi.devops@gmail.com
+[2024-08-06 09:15:57] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:16:08] [SUCCESS] [127.0.0.1] [User: jotieno] User logged in successfully.
+[2024-08-06 09:16:20] [SUCCESS] [127.0.0.1] [User: jotieno] Password successfully changed.
+[2024-08-06 09:16:24] [SUCCESS] [127.0.0.1] [User: jotieno] User logged out successfully.
+[2024-08-06 09:16:39] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:16:53] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 8 updated successfully.
+[2024-08-06 09:18:41] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - gnjeri, Email - kemoi.devops@gmail.com
+[2024-08-06 09:19:00] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:19:17] [SUCCESS] [127.0.0.1] [User: gnjeri] User logged in successfully.
+[2024-08-06 09:19:40] [SUCCESS] [127.0.0.1] [User: gnjeri] Password successfully changed.
+[2024-08-06 09:19:43] [SUCCESS] [127.0.0.1] [User: gnjeri] User logged out successfully.
+[2024-08-06 09:19:53] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:20:15] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 9 updated successfully.
+[2024-08-06 09:28:30] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - pkimani, Email - kemoi.devops@gmail.com
+[2024-08-06 09:31:11] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:31:20] [SUCCESS] [127.0.0.1] [User: pkimani] User logged in successfully.
+[2024-08-06 09:33:11] [SUCCESS] [127.0.0.1] [User: pkimani] Password successfully changed.
+[2024-08-06 09:33:13] [SUCCESS] [127.0.0.1] [User: pkimani] User logged out successfully.
+[2024-08-06 09:33:16] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:33:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 10 updated successfully.
+[2024-08-06 09:34:58] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - sachieng, Email - kemoi.devops@gmail.com
+[2024-08-06 09:36:05] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:36:36] [SUCCESS] [127.0.0.1] [User: sachieng] User logged in successfully.
+[2024-08-06 09:36:53] [SUCCESS] [127.0.0.1] [User: sachieng] Password successfully changed.
+[2024-08-06 09:36:55] [SUCCESS] [127.0.0.1] [User: sachieng] User logged out successfully.
+[2024-08-06 09:37:01] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:37:22] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 11 updated successfully.
+[2024-08-06 09:38:40] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - bkiplangat, Email - kemoi.devops@gmail.com
+[2024-08-06 09:39:05] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:40:02] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:40:26] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:40:34] [SUCCESS] [127.0.0.1] [User: bkiplangat] User logged in successfully.
+[2024-08-06 09:40:44] [SUCCESS] [127.0.0.1] [User: bkiplangat] Password successfully changed.
+[2024-08-06 09:40:46] [SUCCESS] [127.0.0.1] [User: bkiplangat] User logged out successfully.
+[2024-08-06 09:40:52] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:41:08] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 12 updated successfully.
+[2024-08-06 09:42:02] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - lmwende, Email - kemoi.devops@gmail.com
+[2024-08-06 09:43:30] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:43:41] [SUCCESS] [127.0.0.1] [User: lmwende] User logged in successfully.
+[2024-08-06 09:43:52] [SUCCESS] [127.0.0.1] [User: lmwende] Password successfully changed.
+[2024-08-06 09:43:53] [SUCCESS] [127.0.0.1] [User: lmwende] User logged out successfully.
+[2024-08-06 09:43:59] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:44:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 13 updated successfully.
+[2024-08-06 09:45:30] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - dkariuki, Email - kemoi.devops@gmail.com
+[2024-08-06 09:45:58] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:46:13] [SUCCESS] [127.0.0.1] [User: dkariuki] User logged in successfully.
+[2024-08-06 09:46:28] [SUCCESS] [127.0.0.1] [User: dkariuki] Password successfully changed.
+[2024-08-06 09:46:30] [SUCCESS] [127.0.0.1] [User: dkariuki] User logged out successfully.
+[2024-08-06 09:46:36] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:46:54] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 14 updated successfully.
+[2024-08-06 09:48:43] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - awambui, Email - kemoi.devops@gmail.com
+[2024-08-06 09:48:54] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:49:23] [FAILURE] [127.0.0.1] [User: awambui] Incorrect password entered.
+[2024-08-06 09:49:41] [SUCCESS] [127.0.0.1] [User: awambui] User logged in successfully.
+[2024-08-06 09:49:59] [SUCCESS] [127.0.0.1] [User: awambui] Password successfully changed.
+[2024-08-06 09:50:00] [SUCCESS] [127.0.0.1] [User: awambui] User logged out successfully.
+[2024-08-06 09:50:06] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:50:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 15 updated successfully.
+[2024-08-06 09:54:09] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - injoroge, Email - kemoi.devops@gmail.com
+[2024-08-06 09:57:24] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 09:57:39] [SUCCESS] [127.0.0.1] [User: injoroge] User logged in successfully.
+[2024-08-06 09:57:59] [SUCCESS] [127.0.0.1] [User: injoroge] Password successfully changed.
+[2024-08-06 09:58:00] [SUCCESS] [127.0.0.1] [User: injoroge] User logged out successfully.
+[2024-08-06 09:58:05] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 09:58:22] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 16 updated successfully.
+[2024-08-06 09:59:33] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - akibaki, Email - kemoi.devops@gmail.com
+[2024-08-06 09:59:51] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:00:09] [SUCCESS] [127.0.0.1] [User: akibaki] User logged in successfully.
+[2024-08-06 10:00:24] [SUCCESS] [127.0.0.1] [User: akibaki] Password successfully changed.
+[2024-08-06 10:00:26] [SUCCESS] [127.0.0.1] [User: akibaki] User logged out successfully.
+[2024-08-06 10:00:30] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:00:44] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 17 updated successfully.
+[2024-08-06 10:03:24] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - jkaranja, Email - kemoi.devops@gmail.com
+[2024-08-06 10:03:41] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:03:50] [SUCCESS] [127.0.0.1] [User: jkaranja] User logged in successfully.
+[2024-08-06 10:04:04] [SUCCESS] [127.0.0.1] [User: jkaranja] Password successfully changed.
+[2024-08-06 10:04:05] [SUCCESS] [127.0.0.1] [User: jkaranja] User logged out successfully.
+[2024-08-06 10:04:10] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:04:22] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 18 updated successfully.
+[2024-08-06 10:05:40] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - fadhiambo, Email - kemoi.devops@gmail.com
+[2024-08-06 10:05:51] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:06:02] [SUCCESS] [127.0.0.1] [User: fadhiambo] User logged in successfully.
+[2024-08-06 10:06:12] [SUCCESS] [127.0.0.1] [User: fadhiambo] Password successfully changed.
+[2024-08-06 10:06:15] [SUCCESS] [127.0.0.1] [User: fadhiambo] User logged out successfully.
+[2024-08-06 10:06:18] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:06:33] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 19 updated successfully.
+[2024-08-06 10:07:34] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - modhiambo, Email - kemoi.devops@gmail.com
+[2024-08-06 10:08:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:08:32] [SUCCESS] [127.0.0.1] [User: modhiambo] User logged in successfully.
+[2024-08-06 10:08:43] [SUCCESS] [127.0.0.1] [User: modhiambo] Password successfully changed.
+[2024-08-06 10:08:45] [SUCCESS] [127.0.0.1] [User: modhiambo] User logged out successfully.
+[2024-08-06 10:08:52] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:09:07] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 20 updated successfully.
+[2024-08-06 10:09:58] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - swafula, Email - kemoi.devops@gmail.com
+[2024-08-06 10:10:11] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:10:23] [SUCCESS] [127.0.0.1] [User: swafula] User logged in successfully.
+[2024-08-06 10:10:42] [SUCCESS] [127.0.0.1] [User: swafula] Password successfully changed.
+[2024-08-06 10:10:47] [SUCCESS] [127.0.0.1] [User: swafula] User logged out successfully.
+[2024-08-06 10:10:52] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:11:04] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 21 updated successfully.
+[2024-08-06 10:11:58] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - komondi, Email - kemoi.devops@gmail.com
+[2024-08-06 10:12:27] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 22 updated successfully.
+[2024-08-06 10:12:31] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:12:55] [SUCCESS] [127.0.0.1] [User: komondi] User logged in successfully.
+[2024-08-06 10:13:09] [SUCCESS] [127.0.0.1] [User: komondi] Password successfully changed.
+[2024-08-06 10:13:11] [SUCCESS] [127.0.0.1] [User: komondi] User logged out successfully.
+[2024-08-06 10:13:17] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:14:17] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - jatieno, Email - kemoi.devops@gmail.com
+[2024-08-06 10:15:20] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:15:27] [SUCCESS] [127.0.0.1] [User: jatieno] User logged in successfully.
+[2024-08-06 10:15:43] [SUCCESS] [127.0.0.1] [User: jatieno] Password successfully changed.
+[2024-08-06 10:15:48] [SUCCESS] [127.0.0.1] [User: jatieno] User logged out successfully.
+[2024-08-06 10:15:54] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:16:29] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 23 updated successfully.
+[2024-08-06 10:17:34] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - vndungu, Email - kemoi.devops@gmail.com
+[2024-08-06 10:17:52] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:17:59] [SUCCESS] [127.0.0.1] [User: vndungu] User logged in successfully.
+[2024-08-06 10:18:21] [SUCCESS] [127.0.0.1] [User: vndungu] Password successfully changed.
+[2024-08-06 10:18:22] [SUCCESS] [127.0.0.1] [User: vndungu] User logged out successfully.
+[2024-08-06 10:18:26] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:18:41] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 24 updated successfully.
+[2024-08-06 10:19:42] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - emutiso, Email - kemoi.devops@gmail.com
+[2024-08-06 10:20:15] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:20:22] [SUCCESS] [127.0.0.1] [User: emutiso] User logged in successfully.
+[2024-08-06 10:20:35] [SUCCESS] [127.0.0.1] [User: emutiso] Password successfully changed.
+[2024-08-06 10:20:37] [SUCCESS] [127.0.0.1] [User: emutiso] User logged out successfully.
+[2024-08-06 10:20:40] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:21:07] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 25 updated successfully.
+[2024-08-06 10:21:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 24 updated successfully.
+[2024-08-06 10:22:22] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - rmwangi, Email - kemoi.devops@gmail.com
+[2024-08-06 10:22:45] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:22:54] [SUCCESS] [127.0.0.1] [User: rmwangi] User logged in successfully.
+[2024-08-06 10:23:07] [SUCCESS] [127.0.0.1] [User: rmwangi] Password successfully changed.
+[2024-08-06 10:23:09] [SUCCESS] [127.0.0.1] [User: rmwangi] User logged out successfully.
+[2024-08-06 10:23:16] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:23:33] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 26 updated successfully.
+[2024-08-06 10:24:48] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - cnjoki, Email - kemoi.devops@gmail.com
+[2024-08-06 10:25:03] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:25:07] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:25:22] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:25:41] [SUCCESS] [127.0.0.1] [User: cnjoki] User logged in successfully.
+[2024-08-06 10:25:56] [SUCCESS] [127.0.0.1] [User: cnjoki] Password successfully changed.
+[2024-08-06 10:25:57] [SUCCESS] [127.0.0.1] [User: cnjoki] User logged out successfully.
+[2024-08-06 10:26:04] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:26:25] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 27 updated successfully.
+[2024-08-06 10:27:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - pmutua, Email - kemoi.devops@gmail.com
+[2024-08-06 10:27:40] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:27:52] [SUCCESS] [127.0.0.1] [User: pmutua] User logged in successfully.
+[2024-08-06 10:28:02] [SUCCESS] [127.0.0.1] [User: pmutua] Password successfully changed.
+[2024-08-06 10:28:05] [SUCCESS] [127.0.0.1] [User: pmutua] User logged out successfully.
+[2024-08-06 10:28:09] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:28:35] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 28 updated successfully.
+[2024-08-06 10:29:17] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - iwairimu, Email - kemoi.devops@gmail.com
+[2024-08-06 10:29:23] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:30:17] [SUCCESS] [127.0.0.1] [User: iwairimu] User logged in successfully.
+[2024-08-06 10:30:29] [SUCCESS] [127.0.0.1] [User: iwairimu] Password successfully changed.
+[2024-08-06 10:30:31] [SUCCESS] [127.0.0.1] [User: iwairimu] User logged out successfully.
+[2024-08-06 10:30:39] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:30:56] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 29 updated successfully.
+[2024-08-06 10:31:50] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - smwangi, Email - kemoi.devops@gmail.com
+[2024-08-06 10:31:56] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:32:09] [SUCCESS] [127.0.0.1] [User: smwangi] User logged in successfully.
+[2024-08-06 10:32:23] [SUCCESS] [127.0.0.1] [User: smwangi] Password successfully changed.
+[2024-08-06 10:32:25] [SUCCESS] [127.0.0.1] [User: smwangi] User logged out successfully.
+[2024-08-06 10:32:32] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:32:52] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 30 updated successfully.
+[2024-08-06 10:33:53] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - lmuthee, Email - kemoi.devops@gmail.com
+[2024-08-06 10:33:57] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:34:13] [SUCCESS] [127.0.0.1] [User: lmuthee] User logged in successfully.
+[2024-08-06 10:34:24] [SUCCESS] [127.0.0.1] [User: lmuthee] Password successfully changed.
+[2024-08-06 10:34:28] [SUCCESS] [127.0.0.1] [User: lmuthee] User logged out successfully.
+[2024-08-06 10:34:34] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:34:53] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 31 updated successfully.
+[2024-08-06 10:35:48] [SUCCESS] [127.0.0.1] [User: kevimoi] User successfully added: Username - skiptoo, Email - kemoi.devops@gmail.com
+[2024-08-06 10:35:54] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 10:36:09] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-06 10:36:23] [SUCCESS] [127.0.0.1] [User: skiptoo] Password successfully changed.
+[2024-08-06 10:36:25] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged out successfully.
+[2024-08-06 10:36:28] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 10:36:43] [SUCCESS] [127.0.0.1] [User: kevimoi] User's details with ID: 32 updated successfully.
+[2024-08-06 10:47:37] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 1 updated successfully.
+[2024-08-06 10:49:11] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 2 updated successfully.
+[2024-08-06 10:50:37] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-08-06 10:50:59] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 2 updated successfully.
+[2024-08-06 10:53:02] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDD 012D, VIN - WDDHF2EB1BA341563
+[2024-08-06 10:54:14] [ERROR] [127.0.0.1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-08-06 10:54:42] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCE 345E, VIN - 1FAFP34N46W208696
+[2024-08-06 10:56:25] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDG 678F, VIN - 5TFUM5F15AX013483
+[2024-08-06 10:57:25] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDG 901G, VIN - 1HGCP2F30AA195049
+[2024-08-06 10:58:37] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCH 234H, VIN - KMHDN45D11U221277
+[2024-08-06 11:04:36] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDJ 567J, VIN - 2G1FT3DW6B9179941
+[2024-08-06 11:05:34] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDK 890K, VIN - 1FMEU15H4TLA52888
+[2024-08-06 11:06:41] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCL 111L, VIN - JM1BL1UP5D1823715
+[2024-08-06 11:07:49] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCM 222M, VIN - 5FNRL5H9XEB025978
+[2024-08-06 11:09:20] [ERROR] [127.0.0.1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-08-06 11:09:30] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCN 333N, VIN - 2C4RC1GG8CR134062
+[2024-08-06 11:10:47] [ERROR] [127.0.0.1] [User: kevimoi] Vehicle addition failed due to validation errors
+[2024-08-06 11:11:03] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDP 444P, VIN - 5FPYK1F25CB552019
+[2024-08-06 11:11:25] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-08-06 11:11:30] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 2 updated successfully.
+[2024-08-06 11:12:51] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KDQ 555Q, VIN - 4T1BF3EK0BU713717
+[2024-08-06 11:14:01] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCR 666R, VIN - 3GTP1VEC4EG479750
+[2024-08-06 11:14:57] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCS 777S, VIN - 5FNRL3H75AB062031
+[2024-08-06 11:15:58] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCT 888T, VIN - 1FAHP35N88W212535
+[2024-08-06 11:17:01] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCU 999U, VIN - 3GNBABFW5BS599347
+[2024-08-06 11:18:36] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle successfully added: License Plate - KCV 001V, VIN - 2T1BURHE7FC242011
+[2024-08-06 11:51:02] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-08-06 11:51:27] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 1 updated successfully.
+[2024-08-06 11:52:10] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 2 updated successfully.
+[2024-08-06 11:52:31] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 3 updated successfully.
+[2024-08-06 12:41:34] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-06 13:14:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-06 13:14:50] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-06 13:17:19] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-06 13:18:11] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-06 13:18:59] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-06 13:30:19] [SUCCESS] [127.0.0.1] [User: skiptoo] Maintenance schedule booked successfully for vehicle ID: 20, task: Routine Maintenance, date: 2024-08-07.
+[2024-08-07 10:05:10] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-07 10:07:04] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged out successfully.
+[2024-08-07 10:07:47] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-07 10:07:59] [SUCCESS] [127.0.0.1] [User: JD] Maintenance task with schedule ID: 22 started successfully.
+[2024-08-07 10:10:05] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-07 10:10:14] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-07 10:10:23] [SUCCESS] [127.0.0.1] [User: skiptoo] Mileage successfully Logged.
+[2024-08-07 10:11:29] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged out successfully.
+[2024-08-07 10:11:43] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-07 10:12:37] [SUCCESS] [127.0.0.1] [User: JD] Vehicle with schedule ID 22 checked out successfully.
+[2024-08-07 10:13:04] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-07 10:13:13] [FAILURE] [127.0.0.1] [User: skip] Non-existent username entered.
+[2024-08-07 10:13:21] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-07 10:19:03] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged out successfully.
+[2024-08-07 10:19:13] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-07 10:20:18] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-07 10:20:24] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-07 10:21:19] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-07 10:21:26] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-07 10:21:59] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-07 10:22:18] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged in successfully.
+[2024-08-07 10:34:12] [SUCCESS] [127.0.0.1] [User: skiptoo] User logged out successfully.
+[2024-08-07 10:40:57] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-08 09:43:58] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-08 09:48:03] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 1, task: Routine Maintenance, date: 2024-08-09.
+[2024-08-08 09:56:20] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 1, task: Tire and Wheel Maintenance, date: 2024-08-09.
+[2024-08-08 09:57:10] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-08 09:57:14] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-08 09:57:50] [SUCCESS] [127.0.0.1] [User: kevimoi] User with ID: 2 deleted successfully
+[2024-08-08 09:58:52] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 1 updated successfully.
+[2024-08-08 09:59:03] [SUCCESS] [127.0.0.1] [User: kevimoi] Vehicle details with vehicle ID: 1 updated successfully.
+[2024-08-08 11:30:32] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-08 11:32:30] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-08 11:32:34] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 11:36:59] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 11:37:06] [SUCCESS] [127.0.0.1] [User: swafula] User logged in successfully.
+[2024-08-08 11:37:25] [SUCCESS] [127.0.0.1] [User: swafula] Maintenance schedule booked successfully for vehicle ID: 9, task: Routine Maintenance, date: 2024-08-09.
+[2024-08-08 11:37:44] [SUCCESS] [127.0.0.1] [User: swafula] User logged out successfully.
+[2024-08-08 11:37:56] [SUCCESS] [127.0.0.1] [User: rmwangi] User logged in successfully.
+[2024-08-08 11:38:11] [SUCCESS] [127.0.0.1] [User: rmwangi] Maintenance schedule booked successfully for vehicle ID: 14, task: Suspension and Brakes, date: 2024-08-10.
+[2024-08-08 11:38:25] [SUCCESS] [127.0.0.1] [User: rmwangi] User logged out successfully.
+[2024-08-08 11:38:29] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-08 11:38:35] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-08 11:38:38] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-08 11:38:51] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-08 11:38:57] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 11:39:35] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 11:39:50] [SUCCESS] [127.0.0.1] [User: vndungu] User logged in successfully.
+[2024-08-08 11:40:02] [SUCCESS] [127.0.0.1] [User: vndungu] Maintenance schedule booked successfully for vehicle ID: 12, task: Routine Maintenance, date: 2024-08-10.
+[2024-08-08 11:40:14] [SUCCESS] [127.0.0.1] [User: vndungu] User logged out successfully.
+[2024-08-08 11:40:20] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 11:40:41] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 11:41:00] [SUCCESS] [127.0.0.1] [User: injoroge] User logged in successfully.
+[2024-08-08 11:41:26] [SUCCESS] [127.0.0.1] [User: injoroge] Maintenance schedule booked successfully for vehicle ID: 4, task: Routine Maintenance, date: 2024-08-11.
+[2024-08-08 11:41:33] [SUCCESS] [127.0.0.1] [User: injoroge] User logged out successfully.
+[2024-08-08 11:41:39] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 11:41:53] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 11:42:06] [SUCCESS] [127.0.0.1] [User: jkaranja] User logged in successfully.
+[2024-08-08 11:42:24] [SUCCESS] [127.0.0.1] [User: jkaranja] Maintenance schedule booked successfully for vehicle ID: 6, task: Routine Maintenance, date: 2024-08-09.
+[2024-08-08 11:43:54] [SUCCESS] [127.0.0.1] [User: jkaranja] Maintenance schedule booked successfully for vehicle ID: 6, task: Routine Maintenance, date: 2024-08-09.
+[2024-08-08 11:44:00] [SUCCESS] [127.0.0.1] [User: jkaranja] User logged out successfully.
+[2024-08-08 11:44:11] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 11:47:04] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 11:47:10] [SUCCESS] [127.0.0.1] [User: dkariuki] User logged in successfully.
+[2024-08-08 11:47:25] [SUCCESS] [127.0.0.1] [User: dkariuki] Maintenance schedule booked successfully for vehicle ID: 2, task: Suspension and Brakes, date: 2024-08-09.
+[2024-08-08 11:47:40] [SUCCESS] [127.0.0.1] [User: dkariuki] User logged out successfully.
+[2024-08-08 11:47:45] [SUCCESS] [127.0.0.1] [User: fadhiambo] User logged in successfully.
+[2024-08-08 11:48:05] [SUCCESS] [127.0.0.1] [User: fadhiambo] Maintenance schedule booked successfully for vehicle ID: 7, task: Suspension and Brakes, date: 2024-08-09.
+[2024-08-08 11:48:15] [SUCCESS] [127.0.0.1] [User: fadhiambo] User logged out successfully.
+[2024-08-08 11:49:06] [SUCCESS] [127.0.0.1] [User: pkimani] User logged in successfully.
+[2024-08-08 11:49:34] [SUCCESS] [127.0.0.1] [User: pkimani] User logged out successfully.
+[2024-08-08 11:49:37] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-08 11:49:52] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 1, task: Routine Maintenance, date: 2024-08-15.
+[2024-08-08 11:50:14] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 1, task: Routine Maintenance, date: 2024-08-15.
+[2024-08-08 12:01:33] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 1, task: Routine Maintenance, date: 2024-08-15.
+[2024-08-08 12:08:00] [ERROR] [127.0.0.1] [User: Marshall_W] Attempted to book a maintenance task on a date that is already scheduled for vehicle ID: 1, date: 2024-08-15.
+[2024-08-08 12:08:01] [ERROR] [127.0.0.1] [User: Marshall_W] Attempted to book a maintenance task on a date that is already scheduled for vehicle ID: 1, date: 2024-08-15.
+[2024-08-08 12:14:19] [ERROR] [127.0.0.1] [User: Marshall_W] Attempted to book a maintenance task on a date that is already scheduled for vehicle ID: 1, date: 2024-08-15.
+[2024-08-08 12:15:09] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-08 18:36:54] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-08 18:37:16] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-08 18:37:22] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 18:37:30] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 18:37:34] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-08 19:02:41] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-08 19:02:44] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-08 19:10:52] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-08 19:10:56] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-08 19:11:06] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-08 19:11:11] [SUCCESS] [127.0.0.1] [User: jmwangi] User logged in successfully.
