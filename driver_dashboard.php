@@ -89,7 +89,7 @@ $upcoming_schedules = $result->fetch_all(MYSQLI_ASSOC);
 $sql = "SELECT sh.odometer_reading
         FROM service_history sh
         JOIN maintenance_tasks mt ON sh.task_id = mt.task_id
-        WHERE sh.vehicle_id = ? AND mt.task_name = 'Regular Maintenance'
+        WHERE sh.vehicle_id = ? AND mt.task_name = 'Routine Maintenance'
         ORDER BY sh.service_date DESC 
         LIMIT 1";
 $stmt = $conn->prepare($sql);
