@@ -1129,3 +1129,22 @@
 [2024-08-09 07:42:54] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
 [2024-08-09 07:42:56] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
 [2024-08-09 07:46:35] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-09 10:06:29] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged in successfully.
+[2024-08-09 10:08:27] [SUCCESS] [127.0.0.1] [User: kevimoi] User logged out successfully.
+[2024-08-09 10:08:31] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-09 10:54:26] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-09 11:34:34] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-09 11:39:05] [SUCCESS] [127.0.0.1] [User: Marshall_W] Maintenance schedule booked successfully for vehicle ID: 1, task: Routine Maintenance, date: 2024-08-10.
+[2024-08-09 11:39:56] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-09 11:40:02] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-09 11:40:48] [SUCCESS] [127.0.0.1] [User: JD] Maintenance task with schedule ID: 25 started successfully.
+[2024-08-09 11:43:20] [SUCCESS] [127.0.0.1] [User: JD] Vehicle with schedule ID 25 checked out successfully.
+[2024-08-09 11:43:31] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-09 11:43:34] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-09 11:43:44] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-09 11:43:52] [SUCCESS] [127.0.0.1] [User: JD] User logged in successfully.
+[2024-08-09 11:44:23] [SUCCESS] [127.0.0.1] [User: JD] User logged out successfully.
+[2024-08-09 11:44:28] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-09 11:45:47] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
+[2024-08-09 11:47:28] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged in successfully.
+[2024-08-09 11:48:00] [SUCCESS] [127.0.0.1] [User: Marshall_W] User logged out successfully.
